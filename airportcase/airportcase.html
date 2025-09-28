@@ -19,7 +19,7 @@
 
   <!-- HEADER (uændret markup) -->
   <header class="site-header">
-    <a href="../index/index.html"><h1>PORTFOLIO</h1></a>
+    <a href="/index.html"><h1>PORTFOLIO</h1></a>
     <nav class="nav">
       <ul>
         <li><a href="../aboutme/AboutMe.html">ABOUT ME</a></li>
@@ -56,7 +56,7 @@
         </p>
 
         <div class="cta">
-          <a class="btn ghost" href="#" target="_blank" rel="noopener">Åbn prototype i Figma</a>
+          <a class="btn ghost" href="https://www.figma.com/proto/Fc8tHCRh7zJqFs9IPm3wLL/Airport-case-prototype?node-id=15-375&t=uTqcqAPrp92NccnK-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=5%3A7&show-proto-sidebar=1" target="protoype figma" rel="prototype fimga">Åbn prototype i Figma</a>
           <a class="btn" href="#process">Spring til proces</a>
         </div>
       </div>
@@ -131,7 +131,7 @@
           <ul class="track">
             <li class="slide">
               <figure>
-                <img src="airportcase.img/startogseniorMode.png" alt="Start & Senior-Mode">
+                <img src="airportcase.img/startogseniormode.png" alt="Start & Senior-Mode">
                 <figcaption>Start &amp; Senior-Mode</figcaption>
               </figure>
             </li>
@@ -198,7 +198,7 @@
     <!-- Journey før -->
     <section class="section" id="journey-before">
       <h2>Customer journey map (før)</h2>
-      <p class="muted">Oversigt over den nuværende oplevelse…</p>
+      <p class="muted">Oversigt over den nuværende oplevelse.</p>
       <figure class="fullwidth">
         <img src="airportcase.img/customerjourneymapfør.png" alt="Customer journey før">
       </figure>
@@ -206,7 +206,22 @@
         <details>
           <summary>Læs mere</summary>
           <div class="more">
-            <!-- indhold forkortet for overblik -->
+            <div class="more">
+              <h3>Hvad viser “før”-journeyen?</h3>
+              <ul>
+                <li><strong>Ankomst:</strong> Kø-pres og støj → øget nervøsitet.</li>
+                <li><strong>Flyvalg:</strong> Grid med små logoer → søgning efter KLM, tvivl om valg.</li>
+                <li><strong>Metodevalg:</strong> Flere muligheder (pas/bookingnr.) → usikkerhed om “det rigtige”.</li>
+                <li><strong>Indtastning/scanning:</strong> Småt tastatur og spredt feedback → fejl og gentagelser.</li>
+                <li><strong>Feedback:</strong> Tvetydige statusskærme → “er jeg tjekket ind?”</li>
+                <li><strong>Print:</strong> Kort lettelse, men ingen klar næste handling → usikkerhed ved bagdrop.</li>
+              </ul>
+              <p>
+                Kortlægningen fungerer som <em>analysegrundlag</em> for forbedringerne i “efter”-journeyen
+                (Senior-Mode, Forenklet Tastatur &amp; Plain Language, Trygheds-Print og Forudbestil Assistance).
+              </p>
+            </div>
+            
           </div>
         </details>
       </div>
@@ -215,7 +230,8 @@
     <!-- Feature set -->
     <section class="section" id="features">
       <h2>Feature set</h2>
-      <p class="lead">Fire greb…</p>
+      <p class="lead">  Feature-sættet gør check-in roligt og overskueligt for 65+: 
+        Senior-Mode, venlige fejl, forenklet tastatur og “Trygheds-Print”</p>
       <div class="slider" aria-label="Feature-galleri">
         <button class="nav prev" aria-label="Forrige">‹</button>
         <div class="viewport" aria-live="polite">
@@ -233,7 +249,15 @@
         <details>
           <summary>Læs mere</summary>
           <div class="more">
-            <!-- indhold forkortet -->
+            <div class="more">
+              <ul>
+                <li><strong>Senior-Mode:</strong> Større tekst, høj kontrast og færre valg pr. skærm.</li>
+                <li><strong>Venlige fejl:</strong> Klar årsag + tydeligt næste skridt (fx “scan igen” eller “indtast bookingnr.”).</li>
+                <li><strong>Forenklet tastatur:</strong> Stort numerisk layout med auto-format og læsbare labels.</li>
+                <li><strong>Trygheds-Print:</strong> Boardingkort & bagtags med piktogrammer/farvekoder, der matcher wayfinding.</li>
+              </ul>
+            </div>
+            
           </div>
         </details>
       </div>
@@ -250,7 +274,21 @@
         <details>
           <summary>Læs mere</summary>
           <div class="more">
-            <!-- indhold forkortet -->
+            <div class="more">
+              <h3>Ændringer &amp; løsninger (fra “før” til “efter”)</h3>
+              <ul>
+                <li><strong>Flyvalg (forenklet):</strong> Fra grid med små logoer → få, <em>store kort</em> med KLM først.</li>
+                <li><strong>Senior-Mode:</strong> Ny startknap → <em>større tekst</em>, <em>høj kontrast</em>, <em>færre valg</em>.</li>
+                <li><strong>Identifikation:</strong> <em>Pas-scan</em> (primært) eller <em>forenklet tastatur</em> til bookingnr. Venlige fejl + tydelig feedback.</li>
+                <li><strong>Tilvalg i kort:</strong> Ekstra bagage/sæde/måltid som <em>store kort</em> med <em>plain language</em> og få valg ad gangen.</li>
+                <li><strong>Assistance:</strong> Mulighed for at <em>forudbestille hjælp</em> direkte i flowet.</li>
+                <li><strong>Bekræftelse:</strong> Klar <em>grøn</em> bekræftelse (“Alt er i orden”).</li>
+                <li><strong>Trygheds-print:</strong> Boardingpas + <em>farvekodede bagtags</em> med <em>piktogrammer</em> og mini-vejviser.</li>
+                <li><strong>Næste skridt:</strong> Samme besked på skærm og print (“Følg gul linje til Bagdrop B”).</li>
+              </ul>
+              <p><strong>Forventet effekt:</strong> færre fejl, kortere tid til check-in for 65+, mindre behov for personalehjælp og en mere rolig, tryg oplevelse.</p>
+            </div>
+            
           </div>
         </details>
       </div>
