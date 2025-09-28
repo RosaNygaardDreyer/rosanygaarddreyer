@@ -1,0 +1,157 @@
+
+/* ===== SCHOOL PROJECTS – MAPPE & TABS (DINE STYLES) ===== */
+
+/* Main Section (mobil: centrer) */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.folder-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 400px; /* mobil */
+}
+
+.folder-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  padding-left: 0;
+  pointer-events: none; /* så links ovenpå kan klikkes */
+}
+
+/* Tabs overlay – base */
+.tab-links {
+  position: absolute;
+  top: 5%;
+  left: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  z-index: 2;
+}
+
+.tab-link {
+  color: #300e0e99;
+  text-decoration: none;
+  font-weight: normal;
+  padding: 0.5rem 1rem;
+  font-size: 8px;
+  background: none;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+  line-height: 1;
+  min-width: max-content;
+}
+
+/* DINE mobil-placeringer */
+.tab-link.tab1 { position: relative; top: 40%; left: 40%; }
+.tab-link.tab2 { position: relative; top: 50%; left: -1%; }
+.tab-link.tab3 { position: relative; top: 50%; left: -50%; }
+
+.tab-link:hover { color: #300e0ecc; }
+
+/* ===== Tablet & op ===== */
+@media (min-width: 768px) {
+  /* centrér mappe på tablet */
+  main{
+    display: grid;
+    place-items: center;
+    min-height: 72vh;
+    height: auto;
+    padding: 0;
+    width: 100%;
+  }
+
+  .folder-container{
+    display: block;
+    width: clamp(560px, 72vw, 900px);
+    max-width: none;
+    margin-inline: auto;
+    transform: none !important;
+  }
+
+  .folder-image { width: 100%; height: auto; }
+
+  .tab-links {
+    top: 8%;
+    left: 17%;
+    width: 50%;
+    justify-content: flex-start;
+  }
+
+  .tab-link { font-size: 16px; }
+  .tab-link.tab1 { left: -15%; }
+  .tab-link.tab2 { left: 4%; }
+  .tab-link.tab3 { left: 19%; }
+}
+
+/* ===== iPad Pro (1024–1199px) – ét knæk (dine tal) ===== */
+@media (min-width:1024px) and (max-width:1199px){
+  main{ display:grid; place-items:center; min-height:72vh; height:auto; padding:0; }
+  .folder-container{ display:block; width:clamp(760px, 68vw, 1000px); margin-inline:auto; }
+  .folder-image{ width:100%; height:auto; }
+
+  .tab-link{
+    font-size:17px;
+    white-space:nowrap;
+    min-width:max-content;
+    position:absolute;
+    transform:translate(-50%,-50%);
+    width:20.5%; height:5.8%; top:6.6%;
+  }
+  .tab1{ top:10%; left:32.5%; }
+  .tab2{ left:50%; }
+  .tab3{ left:67.5%; }
+}
+
+/* ===== Large Desktop (kun mappe/tabs) ===== */
+@media (min-width: 1200px) {
+  .folder-container { max-width: 900px; margin: 0 auto; }
+
+  .tab-link { font-size: 16px; }
+  .tab-link.tab1 { top: 90%; left: 2%; }
+  .tab-link.tab2 { top: 100%; left: 90%; }
+  .tab-link.tab3 { top: 120%; left: 160%; }
+}
+
+/* ==== NAVBAR – tablet: klik-dropdown + smallere layout ==== */
+@media (min-width:768px) and (max-width:1199px){
+  /* gør menulinjen smallere så alt kan være der */
+  .nav ul{
+    gap: clamp(1rem, 4vw, 3rem);
+    overflow: visible;           /* dropdown må gerne stikke ud */
+  }
+  .nav a{
+    font-size: 13px;
+    padding: .5rem .75rem;       /* lidt mindre vandret padding */
+  }
+
+  /* på touch/tablet vil vi IKKE åbne på hover */
+  html.no-hover .dropdown:hover .dropdown-content{ display:none; }
+
+  /* men på klik (JS sætter .active) */
+  .dropdown.active .dropdown-content{ display:block; }
+
+  /* dropdown lige under link – centreret */
+  .dropdown-content{
+    position: absolute;
+    top: 100%;
+    left: 50%;                 /* ⬅️ centrer */
+    transform: translateX(-50%);
+    bottom: auto;
+    min-width: 160px;
+    background: #ffffffb9;
+    box-shadow: 0 8px 16px rgba(0,0,0,.2);
+    z-index: 1500;
+  }
+}

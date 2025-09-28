@@ -1,0 +1,400 @@
+/* ===== GLOBAL ===== */
+html, body { width:100%; min-height:100%; overflow-x:hidden; }
+body{
+  font-family:'Poppins', sans-serif;
+  margin:0; padding:0; box-sizing:border-box;
+  display:flex; flex-direction:column; height:100vh;
+}
+
+/* ===========================
+   HEADER + BRAND (H1 + logo)
+   =========================== */
+header.site-header,
+header{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:1rem;
+}
+
+
+
+/* Hele brandet (H1 + logo) er et link */
+.brand{ gap: 0; }
+.brand h1{ margin-bottom: -10px; } /* lille “tuck” under – valgfrit */
+
+h1{ font-size:2rem; margin:0; text-align:center; }
+
+/* Logo – ingen position-hacks, bare størrelse + center */
+.logo{
+  display:block;
+  width:clamp(70px, 8vw, 120px);
+  height:auto;
+  margin:0 auto;
+}
+
+/* Links i header generelt */
+header a{ text-decoration:none; color:inherit; }
+
+/* ===================
+   NAV – MOBIL (bund)
+   =================== */
+.nav{
+  background:#fff; color:#1E1E1E;
+  position:fixed; bottom:0; left:0; right:0;
+  box-shadow:0 -1px 5px rgba(0,0,0,.1);
+  display:flex; justify-content:space-between; align-items:center;
+  z-index:1500;
+}
+.nav ul{ list-style:none; margin:0; padding:.5rem 0; display:flex; justify-content:space-evenly; width:100%; overflow:visible; }
+.nav a{ color:#1E1E1E; text-decoration:none; font-size:12px; white-space:nowrap; padding:.5rem 1rem; text-align:center; }
+.nav a:hover{ color:#A63328; }
+
+.dropdown{ position:relative; }
+
+/* Drop-UP på mobil */
+.dropdown-content{
+  display:none;
+  position:fixed;
+  bottom:60px;
+  left:50%;
+  transform:translateX(-50%);
+  width:60%;
+  min-width:180px;
+  background:#fff;
+  box-shadow:0 8px 16px rgba(0,0,0,.2);
+  z-index:2000;
+}
+.dropdown-content a{ font-size:12px; padding:8px 12px; color:#000; text-decoration:none; display:block; }
+.dropdown-content a:hover{ background:#ddd; }
+
+/* nav.js toggler .active på touch */
+.dropdown.active .dropdown-content{ display:block; }
+
+/* ===== Forsideindhold (mappe + CTA) ===== */
+main{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  padding: 16px 16px 80px; /* plads til bund-nav på mobil */
+}
+
+.folder-and-cta{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(16px, 4vw, 40px);   /* afstand mellem mappe og knap */
+}
+
+/* mappe billedet – uændret */
+.folder-image{
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 900px;
+}
+
+/* CTA-knap med krusedulle som “baggrund” */
+.cta-button{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.cta-doodle{
+  display: block;
+  width: clamp(180px, 24vw, 360px);  /* størrelsen på krusedulle-billedet */
+  height: auto;
+}
+
+.cta-label{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(10px, 1.2vw, 14px);
+  letter-spacing: .08em;
+  color: #1E1E1E;
+  background: rgba(255,255,255,0.0); /* ingen baggrund – teksten ligger bare ovenpå */
+  pointer-events: none;               /* klik rammer <a>, ikke teksten */
+}
+
+/* lille “tryk”-feedback */
+.cta-button:active{ transform: translateY(1px); }
+/* ===================================
+   TABLET & DESKTOP (nav i toppen)
+   =================================== */
+@media (min-width:768px){
+  header.site-header,
+  header{
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:flex-start;   /* holder brand på toplinjen */
+    padding:1rem 2rem;
+  }
+
+  /* brand står til venstre, men logo forbliver centreret under ordet */
+  .brand{ align-items:center; }
+
+  .nav{ position:static; box-shadow:none; width:auto; z-index:auto; }
+  .nav ul{ justify-content:flex-end; gap:10rem; overflow:visible; }
+  .nav a{ font-size:14px; }
+
+  h1{ font-size:2rem; text-align:left; }
+
+  /* Klassisk drop-DOWN under trigger – centreret */
+  .dropdown{ position:relative; display:inline-block; }
+  .dropdown-content{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:50%;
+    transform:translateX(-50%);
+    bottom:auto;
+    width:auto;
+    min-width:160px;
+    background:#ffffffb9;
+    box-shadow:0 8px 16px rgba(0,0,0,.2);
+    z-index:1500;
+  }
+  .dropdown:hover .dropdown-content{ display:block; }
+
+  /* Lidt luft under headeren */
+  main{ margin-top:80px; padding-bottom:0; }
+  main{ display:grid; place-items:center; padding:24px; }
+
+
+  /* Logo en anelse større på bredere skærme */
+  .logo{ width:clamp(80px, 7vw, 140px); }
+}
+
+/* Smallere menulinje og klik-dropdown på tablet, hvis du vil */
+@media (min-width:768px) and (max-width:1199px){
+  .nav ul{ gap:clamp(1rem,4vw,3rem); }
+  .nav a{ font-size:13px; padding:.5rem .75rem; }
+  .dropdown.active .dropdown-content{ display:block; }
+}
+
+/* =====================
+   LARGE DESKTOP tweaks
+   ===================== */
+@media (min-width:1200px){
+  .nav a{ font-size:16px; }
+  header h1{ font-size:3rem; }
+  .dropdown-content a{ font-size:14px; padding:8px 12px;  }
+  .brand{ gap: 0; }
+  .brand h1{ margin-bottom: -20px; } /* lille “tuck” under – valgfrit */
+}
+
+/* ===========================================
+   FORSIDE (index) – mappebilledet i midten
+   (sikker og isoleret: rammer kun klasserne her)
+   =========================================== */
+main{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+  width:100%;
+  padding:16px 16px 80px;   /* plads til bundnav på mobil */
+}
+
+.folder-container{ position:relative; width:100%; max-width:900px; }
+.folder-image{ width:100%; height:auto; display:block; }
+
+@media (min-width:768px){
+  main{ display:grid; place-items:center; padding:24px; }
+  .folder-container{ width:clamp(560px, 70vw, 900px); }
+}
+
+/* ==== QUICK OVERRIDES: center folder + tighten CTA on index ==== */
+
+/* Center the whole section reliably */
+main{
+  display: grid !important;
+  place-items: center !important;
+  padding: 16px 16px 80px !important; /* keep room for bottom nav on mobile */
+}
+
+/* Keep the block itself perfectly centered and control the gap */
+.folder-and-cta{
+  width: min(900px, 92vw) !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  justify-items: center !important;
+  row-gap: clamp(8px, 1.8vw, 18px) !important; /* smaller gap mappe <-> CTA */
+}
+
+/* Image must behave like a block and center itself */
+.folder-image{
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  margin: 0 auto !important;
+
+  /* If your PNG has uneven transparent padding, nudge it visually: */
+  --folder-nudge-x: 0%;              /* tweak to e.g. -2% or 2% if needed */
+  transform: translateX(var(--folder-nudge-x)) !important;
+}
+
+/* Pull the CTA up a bit so the white space shrinks */
+.cta-button{
+  margin-top: clamp(-22px, -3vw, -32px) !important;
+}
+/* ===== INDEX: center folder perfectly + reduce CTA gap ===== */
+
+/* Center whatever is inside <main> on all viewports */
+body > main{
+  display: grid !important;
+  place-items: center !important;
+  padding: 16px 16px 80px !important; /* keep room for bottom nav on mobile */
+}
+
+/* The folder + CTA block */
+body > main > .folder-and-cta{
+  width: 100% !important;
+  max-width: 900px !important;      /* hard max so image doesn't overgrow */
+  margin: 0 auto !important;         /* center the block itself */
+  display: grid !important;          /* grid makes vertical spacing easy */
+  justify-items: center !important;  /* center children horizontally */
+  row-gap: 12px !important;          /* <— shrink space between folder & CTA */
+  text-align: center;
+}
+
+/* The folder image */
+body > main > .folder-and-cta .folder-image{
+  display: block !important;
+  width: clamp(320px, 90vw, 900px) !important;  /* responsive width */
+  height: auto !important;
+  margin: 0 auto !important;                    /* belt-and-suspenders centering */
+}
+
+/* CTA button sits a bit closer to the folder */
+body > main > .folder-and-cta .cta-button{
+  margin-top: -70px !important; /* pull up; tweak -6px..-18px to taste */
+}
+
+/* Desktop tweaks: keep same centering, adjust widths a touch */
+@media (min-width:768px){
+  body > main{ margin-top: 3px !important; padding-bottom: 0 !important; }
+  body > main > .folder-and-cta{ row-gap: 10px !important; }
+  body > main > .folder-and-cta .folder-image{
+    width: clamp(560px, 70vw, 900px) !important;
+  }
+}
+
+/* OPTIONAL: if your PNG has uneven transparent edges and still looks “off”,
+   nudge visually by a percent or two. Remove if not needed. */
+body > main > .folder-and-cta .folder-image{
+  --nudge-x: 0%;                      /* try -1% or -2% if it looks left-heavy */
+  transform: translateX(var(--nudge-x));
+}
+/* === INDEX: fuld centrering + bedre afstand + mindre mappe på desktop === */
+
+/* Center hele main-blokken */
+body > main{
+  display:grid !important;
+  place-items:center !important;
+  min-height:100svh;                 /* fyld hele viewport-højden */
+  padding:16px 16px 80px !important; /* plads til mobil-bundnav */
+}
+
+/* Selve blokken (mappe + CTA) */
+body > main > .folder-and-cta{
+  width:min(92vw, 900px) !important;
+  margin:0 auto !important;
+  display:grid !important;
+  justify-items:center !important;
+  row-gap:clamp(18px, 5vh, 36px) !important;   /* mere luft mellem mappe/CTA */
+  text-align:center;
+}
+
+/* Mappe-størrelse – base */
+body > main > .folder-and-cta .folder-image{
+  display:block !important;
+  width:clamp(320px, 64vw, 680px) !important;  /* responsiv og lidt mindre */
+  height:auto !important;
+  margin:0 auto !important;
+}
+
+/* Ingen negativ “pull up” – lad CTA stå naturligt */
+body > main > .folder-and-cta .cta-button{
+  margin-top:0 !important;
+}
+
+/* Små mobiler: ekstra luft mellem mappe og CTA */
+@media (max-width:480px){
+  body > main > .folder-and-cta{ row-gap:clamp(24px, 7vh, 44px) !important; }
+}
+
+/* Tablet/desktop: gør mappen endnu mindre så CTA altid er synlig */
+@media (min-width:992px){
+  body > main > .folder-and-cta .folder-image{
+    width:clamp(420px, 38vw, 640px) !important;
+    max-height:64vh !important;                 /* fyld aldrig for meget i højden */
+  }
+  body > main{ padding-bottom:24px !important; } /* lidt mindre bund-padding på desktop */
+}
+
+/* (Behold: skjul footer på mobil, vis på ≥768px) */
+.site-footer{ display:none; }
+@media (min-width:768px){
+  .site-footer{ display:block; }
+}
+/* ==== Desktop: næsten ingen luft mellem mappe og CTA ==== */
+@media (min-width: 992px){
+  body > main > .folder-and-cta{
+    row-gap: 6px !important;        /* tæt, men ikke overlap */
+  }
+  body > main > .folder-and-cta .cta-button{
+    margin-top: -14px !important;   /* træk knappen op */
+  }
+  body > main{
+    padding-bottom: 8px !important; /* lidt mindre bund-luft */
+  }
+}
+
+/* Ekstra stramt på meget brede skærme */
+@media (min-width: 1400px){
+  body > main > .folder-and-cta{
+    row-gap: 4px !important;
+  }
+  body > main > .folder-and-cta .cta-button{
+    margin-top: -18px !important;
+  }
+}
+/* === FINAL OVERRIDES: Desktop spacing === */
+@media (min-width: 992px){
+  /* Pull the CTA tight under the folder */
+  body > main > .folder-and-cta{
+    row-gap: 0 !important;            /* no extra gap */
+  }
+  body > main > .folder-and-cta .cta-button{
+    margin-top: -56px !important;     /* stronger pull-up (increase to -70px if needed) */
+  }
+
+  /* Slightly smaller folder so button is always visible */
+  body > main > .folder-and-cta .folder-image{
+    width: clamp(420px, 36vw, 600px) !important;
+    max-height: 60vh !important;
+  }
+
+  /* Trim page padding a touch */
+  body > main{
+    padding-bottom: 8px !important;
+  }
+}
+
+/* On very wide screens, pull even closer if you like */
+@media (min-width: 1400px){
+  body > main > .folder-and-cta .cta-button{
+    margin-top: -64px !important;
+  }
+}

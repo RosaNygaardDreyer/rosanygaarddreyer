@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Socialt frirum – EASJ / EAK</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Base + navbar (samme som de andre cases) -->
+  <link rel="stylesheet" href="../airportcase/airportcase.css">
+  <link rel="stylesheet" href="../index/navigationsbar/nav-bar-test.css?v=2">
+
+  <!-- Case overlay -->
+  <link rel="stylesheet" href="ekcase.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="../index/index.html"><h1>PORTFOLIO</h1></a>
+    <nav class="nav">
+      <ul>
+        <li><a href="../aboutme/AboutMe.html">ABOUT ME</a></li>
+        <li class="dropdown">
+          <a href="../atelier/atelier.html">ATELIER</a>
+        </li>
+        <li class="dropdown">
+          <a href="../schoolprojects/schoolprojects.html">SCHOOL PROJECTS</a>
+          <div class="dropdown-content">
+            <a href="../2semesterprojekter/2semester.html">2. Semester</a>
+            <a href="../3semesterprojekter/3semesterprojekter.html">3. Semester</a>
+            <a href="">4. Semester</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="breadcrumbs"><a href="#">School Projects</a> / <a href="#">3. Semester</a> / Social platform</p>
+
+        <h1>Socialt frirum for studerende</h1>
+        <p class="sub">Fællesskab, events og buddy-match – med bæredygtige valg i design og kode</p>
+
+        <p class="lead">
+          Vi byggede en social platform for Erhvervsakademi København med fokus på fællesskab og let adgang til sociale aktiviteter.
+          Løsningen blev udviklet i HTML, CSS, JavaScript og figma, med inspiration fra Teams’ funktioner – men designet fra bunden.
+        </p>
+
+        <div class="cta">
+          <a class="btn ghost" href="https://www.figma.com/proto/COZGTEGgi4heDK8vzmlTFo/Wireframes?node-id=370-15577&t=0yXGdec8WSwTVzhC-1&scaling=min-zoom&content-scaling=fixed&page-id=367%3A15108" target="_blank" rel="noopener">Prototype v2 (Figma)</a>
+          <a class="btn" href="#process">Spring til proces</a>
+        </div>
+      </div>
+
+      <!-- Hero-billede – større -->
+      <figure class="kiosk">
+        <img src="ekcase.img/heromockup.png" alt="Mockup af socialt frirum" style="max-width:560px; width:100%; height:auto;">
+      </figure>
+    </div>
+  </section>
+
+  <main class="wrap">
+
+    <!-- PROBLEM -->
+    <section class="section tight" id="problem">
+      <h2>Problemstilling & mål</h2>
+      <p>
+        De studerende var spredt over mange systemer (Teams, moodle, mails), og sociale aktiviteter druknede i støj.
+        Vi ville samle overblik og gøre det nemt at opdage og tilmelde sig relevante events – på en måde der føles tryg og enkel.
+      </p>
+    </section>
+
+    <!-- PERSONAS -->
+    <section class="section persona" id="personas">
+      <h2>Mød vores personaer</h2>
+
+      <div class="personas-two personas-compact">
+        <!-- Amina -->
+        <article class="persona-card compact">
+          <figure class="persona-media">
+            <img src="ekcase.img/amina.png" alt="Amina – 1. semester, ny i København">
+          </figure>
+          <p class="persona-intro">
+            Vil hurtigt ind i fællesskabet og finde lave-barriere events uden at det drukner i mange kanaler.
+          </p>
+          <div class="persona-columns compact">
+            <div>
+              <h4>Behov</h4>
+              <ul class="persona-list">
+                <li>RSVP i 1 klik → <strong>kalender</strong>.</li>
+                <li>Hurtig <strong>buddy/gruppe-match</strong>.</li>
+                <li>Se <strong>hvem deltager</strong> (tryg start).</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Udfordringer</h4>
+              <ul class="persona-list">
+                <li>Info spredt i Teams/ekstrasites.</li>
+                <li>Svært at tage første skridt på stor skole.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Jonas -->
+        <article class="persona-card compact">
+          <figure class="persona-media">
+            <img src="ekcase.img/jonas.png" alt="Jonas – 3. semester, fagligt stærk">
+          </figure>
+          <p class="persona-intro">
+            Savner overblik over aktiviteter på tværs og et sted hvor socialt og fagligt spiller enkelt sammen.
+          </p>
+          <div class="persona-columns compact">
+            <div>
+              <h4>Behov</h4>
+              <ul class="persona-list">
+                <li>Klart, <strong>tekstbaseret event-list</strong>.</li>
+                <li><strong>Grupper/sparring</strong> på tværs af linjer.</li>
+                <li><strong>Kalender-synk</strong> & konfliktadvarsel.</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Udfordringer</h4>
+              <ul class="persona-list">
+                <li>Events kommunikeres sent/uklart.</li>
+                <li>Mange kanaler → manglende overblik.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <p class="persona-footnote">
+        Fælles indsigt: Ét samlet overblik, tryg start og lav friktion i UI’et.
+      </p>
+    </section>
+
+    <!-- LØSNING (Prototype 2) -->
+    <section class="section" id="solution">
+      <h2>Løsningen</h2>
+      <p>
+        En enkel platform med fokus på sociale events, buddy-match og en overskuelig kalender.
+        Vi brugte en <em>dark mode-toggle</em>, letvægtige assets og undgik støj for at støtte både tilgængelighed og bæredygtighed.
+      </p>
+    </section>
+
+    <!-- RESEARCH (proces) -->
+    <section class="section" id="research">
+      <h2>Research & afklaring</h2>
+      <p>
+        Vi arbejdede fra hurtige indsigter → HMW → user stories → dot-voting for at fokusere på det vigtigste: 
+        samlet overblik, tryg start, kalender-synk og nem event-tilmelding.
+      </p>
+
+      <div class="slider" aria-label="Affinity mapping & research">
+        <button class="nav prev" aria-label="Forrige">‹</button>
+        <div class="viewport" aria-live="polite">
+          <ul class="track">
+            <li class="slide"><figure><img src="ekcase.img/affinitymapping.png" alt="Affinity mapping – temaer og mønstre"></figure></li>
+            <li class="slide"><figure><img src="ekcase.img/HMWoguserstories.png" alt="HMW og tidlige user stories"></figure></li>
+            <li class="slide"><figure><img src="ekcase.img/userstoriesogfeatures.png" alt="User stories og features – prioriteret"></figure></li>
+            <li class="slide"><figure><img src="ekcase.img/dotvotefeatures.png" alt="Dot voting – prioritering af features"></figure></li>
+            <li class="slide"><figure><img src="ekcase.img/dotvotingværdier.png" alt="Dot voting – projektværdier"></figure></li>
+          </ul>
+        </div>
+        <button class="nav next" aria-label="Næste">›</button>
+        <div class="dots" aria-label="Slide navigation"></div>
+      </div>
+    </section>
+
+    <!-- KOMMENTERET WIREFRAME -->
+    <section class="section" id="wireframes">
+      <h2>Kommenteret wireframe</h2>
+      <p>
+        Vi lavede <strong>kommenterede wireframes for hele siden</strong> (events, kalender, chat, buddy-match). 
+        Her viser jeg et kort <em>eksempel</em> for at illustrere, hvordan vi placerede forklaringer og handlinger,
+        særligt omkring <em>event-tilmelding</em> og <em>RSVP → kalender</em>.
+      </p>
+      <figure class="fullwidth">
+        <!-- Ret filnavnet hvis din fil hedder lidt anderledes -->
+        <img src="ekcase.img/eksempelpåkommenteretwireframe.png" alt="Kommenteret wireframe – eksempel med noter">
+        <figcaption class="muted">
+          Wireframe-udsnit: hvor forklaringer, fejltilstande og “næste skridt” skulle ligge i det endelige UI.
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- PROTOTYPE 1 + KODE (CO₂-optimeret build nævnt neutralt) -->
+    <section class="section" id="v1">
+      <h2>Prototype 1 & kodet build</h2>
+      <p>
+        Prototype 1 samlede de vigtigste skærme og blev derefter bygget i en let kodet version (samme UI som v1) 
+        for at mærke hastighed og interaktion. Vi <em>optimerede koden</em> med bl.a. WebP/SVG-assets, 
+        minificeret CSS/JS, kritisk CSS og lazy-loading af billeder.
+      </p>
+
+      <div class="slider" aria-label="Prototype 1 – nøgleskærme">
+        <button class="nav prev" aria-label="Forrige">‹</button>
+        <div class="viewport" aria-live="polite">
+          <ul class="track">
+            <li class="slide"><figure><img src="ekcase.img/prototypeforside1.png" alt="Prototype 1 – forside/overblik"></figure></li>
+            <li class="slide"><figure><img src="ekcase.img/prototypekalenderside1.png" alt="Prototype 1 – kalender"></figure></li>
+            <li class="slide"><figure><img src="ekcase.img/prototypeeventside1.png" alt="Prototype 1 – eventdetaljer"></figure></li>
+            <li class="slide"><figure><img src="ekcase.img/prototypechatside1.png" alt="Prototype 1 – chat"></figure></li>
+          </ul>
+        </div>
+        <button class="nav next" aria-label="Næste">›</button>
+        <div class="dots" aria-label="Slide navigation"></div>
+      </div>
+    </section>
+
+<!-- Microcopy + assets (under Prototype 1 & build) -->
+<div class="block">
+    <h3>Microcopy & lette assets</h3>
+    <p class="muted">
+    
+            Vi finpudsede microcopy på tværs af forside, kalender og chat, så <em>næste skridt</em> altid er tydeligt. Klare primær-CTA’er
+            som “Udforsk events” og “Åbn kalender” leder ind i flowet, badges og små inline-forklaringer gør det klart, hvad en
+            <em>konflikt</em> betyder – og hvad man gør ved den – mens “hvem deltager” og RSVP-tekster er skrevet i aktivt sprog og
+            placeret helt tæt på handlingen. Korte status-tekster i chat og sektionen “Denne uge” fjerner tvivl, så brugeren uden
+            anstrengelse ved, hvad der sker nu, og hvad de kan gøre bagefter.
+
+          
+    </p>
+  
+    <div class="media-duo">
+      <figure>
+        <!-- byt evt. filnavn hvis dit billede hedder noget andet -->
+        <img src="ekcase.img/eksemplerpåmicrocopys.png" alt="Eksempler på microcopy i UI'et">
+        <figcaption class="muted">Eksempler på microcopy (RSVP, konflikter, buddy-match).</figcaption>
+      </figure>
+  
+      <figure>
+        <!-- byt evt. filnavn hvis dit billede hedder noget andet -->
+        <a href="ekcase.img/webp-optimering.png" target="_blank" rel="noopener">
+          <img src="ekcase.img/billedeoptimering.png" alt="Optimerede WebP-billeder i interfacet">
+        </a>
+        <figcaption class="muted">Lette assets (WebP) for hurtigere indlæsning.</figcaption>
+      </figure>
+    </div>
+  </div>
+  
+    <!-- BRUGERTEST & ITERATION -->
+    <section class="section" id="process">
+      <h2>Brugertest & iteration</h2>
+      <p>
+        Vi testede med 3 studerende: først på Prototype 1, dernæst på den kodede version (samme som v1), 
+        og til sidst på Prototype 2. Vi undersøgte bl.a. event-discovery, navigation mellem kalender/event/chat 
+        og hvor klart “næste skridt” var formuleret.
+      </p>
+
+      <figure class="fullwidth">
+        <img src="ekcase.img/brugertest.png" alt="Opsamling fra brugertest: spørgsmål, mål, styrker, pain points og citater">
+        <figcaption class="muted">Opsamling: testspørgsmål, mål, det der virkede, pain points og citater.</figcaption>
+      </figure>
+
+      <p class="muted" style="margin-top:10px">
+        Testen pegede på tre ting: kalenderen skulle være mere læsbar, konflikt-løsning manglede forklaring, 
+        og event-discovery skulle være lettere. 
+      </p>
+    </section>
+
+    <!-- PROTOTYPE 2 (RESULTAT) -->
+    <section class="section" id="v2">
+
+      <h2>Prototype 2 (resultat)</h2>
+      <div class="cta" style="margin-top:20px;">
+        <a class="btn ghost" 
+           href="https://www.figma.com/proto/COZGTEGgi4heDK8vzmlTFo/Wireframes?node-id=370-15577&t=0yXGdec8WSwTVzhC-1&scaling=min-zoom&content-scaling=fixed&page-id=367%3A15108" 
+           target="_blank" rel="noopener">
+          Åbn Prototype v2 (Figma)
+        </a>
+      </div>
+      
+      <p>
+        På baggrund af testen skærpede vi <strong>læseligheden</strong> i kalenderen, 
+        lagde <strong>forklaring på konflikt-løsning</strong> direkte i UI’et og arbejdede målrettet med 
+        <strong>microcopy</strong>, så “næste skridt” altid er tydeligt (tilmeld, gem, kontakt, osv.).
+      </p>
+
+      <div class="slider" aria-label="Prototype 2 – forbedringer">
+        <button class="nav prev" aria-label="Forrige">‹</button>
+        <div class="viewport" aria-live="polite">
+          <ul class="track">
+            <li class="slide"><figure><img src="ekcase.img/kalenderprototype2.png" alt="Prototype 2 – tydelig ugestruktur og RSVP-flow"></figure></li>
+            <li class="slide"><figure><img src="ekcase.img/heromockup.png" alt="Prototype 2 – tydelig ugestruktur og RSVP-flow"></figure></li>
+            <li class="slide"><figure><img src="ekcase.img/løserkonfliktprototype2.png" alt="Prototype 2 – konfliktløsning forklaret i UI"></figure></li>
+            <li class="slide"><figure><img src="ekcase.img/eksemplerpåmicrocopys.png" alt="Prototype 2 – eksempler på microcopy, der guider handling"></figure></li>
+          </ul>
+        </div>
+        <button class="nav next" aria-label="Næste">›</button>
+        <div class="dots" aria-label="Slide navigation"></div>
+      </div>
+
+      
+    </section>
+
+    <!-- KONKLUSION -->
+    <section class="section" id="conclusion">
+        <h2>Konklusion & læring</h2>
+        <p class="muted">
+          Et samlet overblik giver først rigtig værdi, når sproget og flowet er friktionsfrit. Vores største løft kom ikke fra
+          flere features, men fra tydelig microcopy, simple lister frem for tunge visninger og konsekvente mønstre for feedback. Resultatet er en roligere start for nye studerende og en hurtigere vej til
+          deltagelse i fællesskabet. I fremtiden ville v gerne bygge videre på
+          kalender-synk og buddy-match.
+        </p>
+      </section>
+      
+
+    <!-- ROLLE -->
+    <section class="section" id="role">
+      <h2>Min rolle</h2>
+      <ul class="muted">
+        <li>Research (personas, affinity)</li>
+        <li>UI/interaction, microcopy, HTML/CSS/JS</li>
+        <li>Test af Prototype 1 → iteration → Prototype 2</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="footer-title">CONTACT ME</p>
+      <ul class="footer-list">
+        <li><a class="footer-link" href="tel:+4542404706">+45 42 40 47 06</a></li>
+        <li><a class="footer-link" href="mailto:Rosanygaarddreyer@gmail.com">Rosanygaarddreyer@gmail.com</a></li>
+        <li><a class="footer-link" href="#" rel="noopener">LinkedIn</a></li>
+        <li>
+          <a class="footer-link" href="https://www.tiktok.com/@artbyrnd3?_r=1&_d=secCgYIASAHKAESPgo8X%2BAFubUjBgwzIQhBqpL39z3VYUuPZrnoaPKEHuu3hIxKa8E5Optn92PWylP%2FajgGTGk2qolOG7cDJEJPGgA%3D&_svg=2&checksum=0fd42cfc3fb94438dd041c9c089158bfbcd9c8da95e8f716f2f7479a9a8148ad&item_author_type=1&sec_uid=MS4wLjABAAAAikHZUig2hhnuMXgENuC1M-WBl_loFzcko-MKBHu_vp-hYGFMl3_3R4ryBGQdVquM&sec_user_id=MS4wLjABAAAAikHZUig2hhnuMXgENuC1M-WBl_loFzcko-MKBHu_vp-hYGFMl3_3R4ryBGQdVquM&share_app_id=1233&share_author_id=7343351272483423264&share_link_id=06E59B1B-2EE2-4F4E-9008-3CBCFBAE9D79&share_scene=1&sharer_language=en&social_share_type=4&source=h5_m&timestamp=1759069103&tt_from=copy&u_code=ed212i8hb1i7a0&ug_btm=b8727%2Cb0&user_id=7343351272483423264&utm_campaign=client_share&utm_medium=ios&utm_source=copy"
+             target="_blank" rel="noopener">TikTok @artbyrnd3</a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+  
+
+  <script src="../airportcase/airportcase.js"></script>
+  <script src="../nav.js" defer></script>
+</body>
+</html>

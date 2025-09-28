@@ -1,0 +1,393 @@
+/* Mobile-first: Default settings */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0;
+    text-align: center;
+}
+
+header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo {
+    width: 50%;
+    max-width: 120px;
+    position: relative;
+    bottom: 0;
+    top: -15%;
+    left: 16%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+}
+
+.dropdown-content a {
+    font-size: 8px; /* Mindre fontstørrelse */
+    padding: 5px 8px; /* Mindre padding for at matche størrelsen */
+}
+
+/* Navigation Bar Styles - mobile */
+.nav {
+    background-color: #fff;
+    color: #1E1E1E;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0.5rem 0;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.nav a {
+    color: #1E1E1E;
+    text-decoration: none;
+    font-size: 12px;
+    white-space: nowrap;
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+
+.nav a:hover {
+    color: #A63328;
+}
+
+/* Dropdown styles for mobile (drop-up) */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    bottom: 60px;
+    width: 30%;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 4px;
+}
+
+.dropdown-content a {
+    font-size: 10px;
+}
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show dropdown content on click for mobile */
+.dropdown.active .dropdown-content {
+    display: block;
+}
+
+
+/* For larger screens (tablet/desktop) */
+@media (min-width: 768px) {
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+
+    .nav {
+        position: static;
+        box-shadow: none;
+        width: auto;
+    }
+
+    .nav ul {
+        justify-content: flex-end;
+        gap: 10rem;
+    }
+
+    .nav a {
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 3rem;
+        text-align: left;
+    }
+
+    .logo {
+        width: 50%;
+        max-width: 150px;
+        position: relative;
+        bottom: 0;
+        top: 55%;
+        left: -20%;
+        transform: translateX(-50%);
+    }
+
+    /* Dropdown for larger screens (drop-down) */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%; /* dropdown will drop down */
+        background-color: #ffffffb9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 14px;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+}
+/* === FIX PACK (paste nederst) === */
+
+/* 1) Mindre font i nav-links */
+header .nav a{
+    font-size:10px !important;      /* var 12px – gør den mindre på mobil */
+    letter-spacing:.01em;
+  }
+  @media (min-width:768px){
+    header .nav a{
+      font-size:14px !important;    /* var 18px – mindre på desktop */
+    }
+  }
+  
+  /* 2) Logo lidt mere til højre (mobil) + ikke så langt til venstre på desktop */
+  header .logo{
+    left:20% !important;            /* var 16% – lidt mere mod højre på mobil */
+  }
+  @media (min-width:768px){
+    header .logo{
+      left:-10% !important;         /* var -20% – mindre venstreforskydning på desktop */
+      max-width:120px !important;   /* bevar størrelse */
+    }
+  }
+  
+  /* 3) Isolér slider-knapper fra navbar-styles på mobil */
+  .slider button.nav{
+    all: unset;                      /* nulstil alt så den ikke arver .nav (navbar) */
+    display:inline-block;
+    border:1px solid var(--edge);
+    padding:8px 12px;
+    border-radius:10px;
+    cursor:pointer;
+    background:transparent;
+    color:var(--ink);
+    line-height:1;
+  }
+  .slider button.nav:disabled{ opacity:.35; cursor:not-allowed; }
+  
+  /* 4) (Valgfri – men anbefalet) Scope navbar-fixed til header-nav,
+        så andre .nav elementer aldrig bliver fixed ved en fejl */
+  header > nav.nav{
+    position:fixed !important;      /* som du har nu, men kun for header-nav */
+    left:0; right:0; bottom:0;
+    width:100%;
+    box-shadow:0 -1px 5px rgba(0,0,0,.1);
+    z-index:1500;
+  }
+  @media (min-width:768px){
+    header > nav.nav{ position:static !important; box-shadow:none; width:auto; }
+  }
+
+/* === CAROUSEL CENTER FIX — paste LAST === */
+
+/* hold selve sporet i midten */
+.slider .track{
+    align-items:center !important;
+  }
+  
+  /* gør hver slide til en flex-container der centrerer indholdet */
+  .slider .slide{
+    display:flex !important;
+    justify-content:center !important;
+  }
+  
+  /* centrer figuren og begræns bredde, så den ikke “hænger” til venstre */
+  .slider .slide figure{
+    margin:0 auto !important;
+    width:100% !important;
+    max-width:520px !important;   /* mobil */
+  }
+  
+  /* billede skal skaleres pænt og være centreret */
+  .slider .slide img{
+    display:block !important;
+    width:100% !important;
+    height:auto !important;
+    object-fit:contain !important;
+  }
+  
+  /* lidt større max-bredde på tablet/desktop */
+  @media (min-width:768px){
+    .slider .slide figure{ max-width:760px !important; }
+  }
+  
+  /* sørg for at karussel-knapperne ikke arver .nav fra navbaren */
+  .slider button.nav{
+    all:unset;
+    display:inline-block;
+    border:1px solid var(--edge);
+    padding:8px 12px;
+    border-radius:10px;
+    cursor:pointer;
+    background:transparent;
+    line-height:1;
+  }
+  .slider button.nav:disabled{ opacity:.35; cursor:not-allowed; }
+
+  /* ===== Footer (global) ===== */
+.site-footer{
+  background:#fff;
+  color:var(--text, #2a2a2e);
+  border-top:1px solid var(--edge, #e9e9ec);
+}
+.site-footer .wrap{
+  max-width:var(--maxw-desktop, 1040px);
+  margin:0 auto;
+  padding:16px 18px;
+}
+.site-footer .footer-title{
+  margin:0 0 8px;
+  font-weight:600;
+  color:var(--ink, #111111);
+}
+.site-footer .footer-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px 18px;
+}
+.site-footer a{
+  color:inherit;
+  text-decoration:none;
+}
+.site-footer a:hover{
+  text-decoration:underline;
+  color:#A63328; /* matcher din hover på nav-links */
+}
+
+/* Ekstra bundluft på mobil, så footer ikke gemmes bag den faste nav */
+@media (max-width: 767px){
+  .site-footer .wrap{
+    padding-bottom:90px; /* ~højde på bund-nav + lidt luft */
+  }
+}
+
+/* === FOOTER: kompakt, mobile-first (overrides) === */
+.site-footer{
+  padding: 10px 14px 12px !important;      /* mindre lodret padding */
+  border-top: 1px solid #e9e9e9;
+  background:#fff;
+}
+
+.site-footer .wrap{
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+/* Titel + links i REGULAR Poppins, mindre størrelser */
+.footer-title{
+  margin: 0 0 6px !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 12px !important;
+  line-height: 1.2 !important;
+  letter-spacing: .02em;
+}
+
+.footer-list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;        /* stakket på mobil */
+  gap: 4px !important;           /* tættere mellem punkter */
+}
+
+.footer-link{
+  display: inline-block;         /* større tap-target uden at fylde for meget */
+  padding: 2px 0 !important;     /* lille vertikal polstring */
+  text-decoration: none;
+  color: #1E1E1E;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 13px !important;    /* mindre tekst */
+  line-height: 1.35 !important;  /* kompakt linjehøjde */
+  border-bottom: 1px dashed transparent;
+}
+.footer-link:hover{ border-bottom-color:#9a9a9a; }
+
+/* Tablet/desktop: lidt mere luft vandret, stadig lav højde */
+@media (min-width: 768px){
+  .site-footer{ padding: 12px 16px !important; }
+  .footer-title{ font-size: 13px !important; margin-bottom: 8px !important; }
+  .footer-list{
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 18px !important;
+    row-gap: 4px !important;
+  }
+  .footer-link{ font-size: 13px !important; padding: 2px 0 !important; }
+}
+/* Skjul footer på mobil */
+@media (max-width: 767px){
+  .site-footer{
+    display: none !important;
+  }
+}
+
+/* Vis/brug kompakt footer fra tablet og op (valgfrit, hvis du har den) */
+@media (min-width: 768px){
+  .site-footer{
+    display: block;
+  }
+}

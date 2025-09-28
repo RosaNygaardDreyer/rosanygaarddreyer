@@ -1,0 +1,325 @@
+/* ===== Design tokens ===== */
+:root{
+  --ink:#111111;    /* primær tekst/overskrifter */
+  --text:#2a2a2e;   /* brødtekst */
+  --muted:#6f6f75;  /* sekundær/labels */
+  --bg:#ffffff;
+  --edge:#e9e9ec;
+  --accent:#111111;
+  --gap:22px;
+
+  --maxw-mobile:358.8px;
+  --maxw-tablet:900px;
+  --maxw-desktop:1040px;
+}
+
+/* ===== Base ===== */
+*{ box-sizing:border-box }
+html,body{ margin:0 }
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+img{ max-width:100%; height:auto; display:block }
+a{ color:inherit }
+
+/* containers */
+.wrap{
+  width:100%;
+  max-width:var(--maxw-mobile);
+  margin:0 auto;
+  padding:0 18px;
+}
+
+/* ===== Typografi (scopet – påvirker IKKE header) ===== */
+.hero h1,.hero h2,.hero h3,
+main h1, main h2, main h3{
+  margin:0 0 .5rem; letter-spacing:-0.01em; color:var(--ink);
+}
+.hero h1, main h1{ font-size:32px; font-weight:400; line-height:1.15 }
+.hero h2, main h2{ font-size:24px; font-weight:400 }
+.hero h3, main h3{ font-size:18px; font-weight:600 }
+
+main p, .hero p{ margin:.5rem 0; color:var(--text) }
+
+.sub{  font-size:18px; font-weight:300; color:var(--text) }
+.lead{ font-size:13px; color:var(--text) }
+.muted{ color:var(--muted) }
+
+blockquote{
+  margin:.5rem 0 0;
+  padding-left:14px;
+  border-left:3px solid var(--edge);
+  color:var(--text);
+  font-style:italic;
+}
+
+/* ===== Buttons ===== */
+.btn{
+  display:inline-block;
+  padding:12px 18px;
+  border:1px solid var(--accent);
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:600;
+  transition:transform .06s ease;
+  color:var(--ink);
+}
+.btn:hover{ transform:translateY(-1px) }
+.btn.ghost{ background:transparent }
+.btn.sm{ padding:10px 14px; font-size:.95rem }
+
+/* ===== Spacing ===== */
+.section{ padding:34px 0 28px; border-top:1px solid var(--edge) }
+.section.tight{ padding-top:18px }
+
+/* ===== Hero ===== */
+.breadcrumbs{ color:var(--muted); margin:6px 0 18px; font-size:.9rem }
+.breadcrumbs a{ text-decoration:none }
+.hero{ padding:18px 0 10px; border-bottom:1px solid var(--edge) }
+.hero-grid{ display:grid; gap:16px; align-items:start }
+.hero-copy .cta{ display:flex; gap:10px; margin-top:14px; flex-wrap:wrap }
+.kiosk{ display:none } /* hidden on phones */
+
+/* ===== Persona ===== */
+.persona h2{ margin-bottom:10px }
+.persona-grid{ display:grid; gap:16px; align-items:start }
+.persona-card{
+  padding:14px;
+  width:min(420px,100%);
+  margin-left:-18px; /* flush på mobil */
+}
+.persona-card img{ width:100%; height:auto }
+.persona-copy h3{ margin:0 0 .25rem }
+
+/* — Udvidet persona-tekst — */
+.persona-notes{ margin-top:10px }
+.persona-title{ font-size:20px; font-weight:600; margin:8px 0 6px; color:var(--ink) }
+.persona-copy h4{ font-size:16px; font-weight:600; margin:10px 0 4px; color:var(--ink) }
+.persona-list{ margin:0 0 8px 18px; padding:0 }
+.persona-list li{ margin:2px 0 }
+.persona-quote{ margin-top:6px }
+
+/* ===== Fullwidth billeder ===== */
+.fullwidth{ margin:10px 0 0 }
+.fullwidth img{ width:100%; height:auto }
+
+/* ===== Rich Picture notes ===== */
+.rp-notes{ margin:10px 0 0 }
+.rp-title{ font-size:18px; font-weight:600; margin:6px 0 8px; color:var(--ink) }
+#process h4{ font-size:16px; font-weight:600; margin:10px 0 4px; color:var(--ink) }
+.rp-list{ margin:0 0 8px 18px; padding:0 }
+.rp-list li{ margin:2px 0 }
+
+/* ===== Slider (multi-instance) ===== */
+.slider{
+  display:grid;
+  grid-template-columns:auto 1fr auto; /* prev | viewport | next */
+  align-items:center;
+  gap:10px;
+  margin-top:10px;
+}
+/* VIGTIGT: kun sliderens knapper må bruge .nav */
+.slider .nav{
+  background:transparent;
+  color:var(--ink);
+  border:1px solid var(--edge);
+  padding:8px 12px;
+  border-radius:10px;
+  cursor:pointer;
+}
+.slider .nav:disabled{ opacity:.35; cursor:not-allowed }
+
+.viewport{ overflow:hidden }
+.track{
+  display:flex;
+  gap:16px;
+  transform:translateX(0);
+  transition:transform .35s ease;
+  list-style:none; margin:0; padding:0;
+}
+.slide{ flex:0 0 100% }
+.slide figure{ margin:0 }
+.slide img{
+  display:block; width:100%; height:auto;
+  max-width:760px; margin-inline:auto; border-radius:14px;
+}
+.slide figcaption{
+  text-align:center; margin-top:6px; color:var(--muted); font-size:.95rem;
+}
+
+/* Dots */
+.dots{
+  display:flex; gap:8px; justify-content:center; align-items:center;
+  margin-top:12px; grid-column:1 / -1;
+}
+.dots button{
+  width:10px; height:10px; padding:0; border:0; border-radius:50%;
+  background:#c9c9cf; cursor:pointer; line-height:0; aspect-ratio:1/1;
+}
+.dots button[aria-current="true"]{ background:var(--ink) }
+
+/* (let begrænsning af sticky notes på mobil) */
+#features .slide img{ max-width:520px; border-radius:12px; }
+
+/* ===== Details ===== */
+.details-card details{
+  border:1px solid var(--edge);
+  border-radius:12px;
+  padding:12px 14px;
+}
+.details-card summary{ cursor:pointer; font-weight:600; color:var(--ink); }
+.details-card .more{ margin-top:8px }
+
+/* ===== Resultat ===== */
+.result .result-grid{ display:grid; gap:16px; align-items:center }
+.result-shot img{ width:100%; height:auto; border-radius:14px }
+
+/* ===== Flowchart ===== */
+.flowchart-grid{ display:grid; gap:16px; align-items:start; }
+.flowchart-copy p{ margin:0 0 6px }
+.flowchart-bullets{ margin:4px 0 0 18px; padding:0 }
+.flowchart-bullets li{ margin:2px 0 }
+.flowchart-fig img{
+  width:100%; height:auto; max-height:720px; object-fit:contain; border-radius:12px;
+}
+
+/* ===== Tablet ≥ 768px ===== */
+@media (min-width:768px){
+  .wrap{ max-width:var(--maxw-tablet) }
+
+  .hero h1, main h1{ font-size:40px }
+  .hero h2, main h2{ font-size:32px }
+  .sub{ font-size:24px }
+  .lead{ font-size:14px }
+
+  .section{ padding:36px 0 30px }
+
+  .hero-grid{ grid-template-columns: 1fr 300px; column-gap:28px; }
+  .kiosk{ display:block; align-self:end }
+  .kiosk img{ width:100%; height:auto; max-height:420px; }
+
+  .persona-grid{ grid-template-columns: 460px 1fr; column-gap:36px; }
+  .persona-card{ margin-left:0 }
+
+  .slide{ flex-basis:calc((100% - 16px) / 2) }
+
+  .result .result-grid{ grid-template-columns:1fr 460px; column-gap:38px; }
+
+  .flowchart-grid{ grid-template-columns: 1fr 480px; column-gap:36px; }
+}
+
+/* ===== Desktop ≥ 1200px ===== */
+@media (min-width:1200px){
+  .wrap{ max-width:var(--maxw-desktop) }
+  .hero-grid{ grid-template-columns:1fr 320px }
+  .kiosk img{ max-height:440px }
+  .flowchart-grid{ grid-template-columns: 1fr 560px; }
+}
+
+/* ===== Mobile polish (≤ 480px) ===== */
+@media (max-width: 480px){
+  /* mindre typografi på små mobiler (hero + main) */
+  .hero h1, main h1{ font-size:28px; line-height:1.2 }
+  .hero h2, main h2{ font-size:22px }
+  .sub{ font-size:16px }
+  .lead{ font-size:12px }
+
+  /* knapper mindre */
+  .btn{ padding:9px 12px; border-radius:10px; font-size:.9rem; }
+  .hero-copy .cta{ gap:8px }
+
+  /* 100% centrering i sliders */
+  .slider .track{ align-items:center }
+  .slider .slide{ display:flex; justify-content:center }
+  .slider .slide figure{ margin:0 auto; width:100%; max-width:520px }
+}
+
+/* ===========================
+   Mobile polish (global for alle cases)
+   =========================== */
+@media (max-width: 480px){
+  /* Typografi – nedskalér en tak (kun hero + main) */
+  html { font-size: 15px; }
+  .hero h1, main h1 { font-size: 24px; line-height: 1.22; }
+  .hero h2, main h2 { font-size: 20px; line-height: 1.28; }
+  .hero h3, main h3 { font-size: 16px; line-height: 1.3; }
+  main p, .lead { font-size: 0.95rem; }
+  .sub { font-size: 1rem; }
+  .muted { font-size: 0.9rem; }
+
+  /* Knapper – mindre og strammere */
+  .btn{ padding: 9px 12px; font-size: .9rem; border-radius: 10px; }
+  .btn.sm{ padding: 8px 10px; font-size: .85rem; }
+  .hero-copy .cta{ gap: 8px; }
+
+  /* Sektioner – lidt mindre vertikal luft */
+  .section{ padding: 22px 0 18px; }
+  .section.tight{ padding-top: 12px; }
+
+  /* Brødkrummer */
+  .breadcrumbs{ font-size: .85rem; margin: 4px 0 12px; }
+
+  /* Karrusel / slider-navigation – SCOPET */
+  .slider .nav{
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  .dots{ gap: 6px; margin-top: 8px; }
+  .dots button{ width: 8px; height: 8px; }
+
+  /* Persona-kort indryk (så det ikke “stikker” ud på mobil) */
+  .persona-card{ margin-left: 0; padding: 10px; }
+
+  /* Helbred almindelige figurer (billeder) så de ikke fylder unødigt */
+  .fullwidth{ margin-top: 6px; }
+}
+
+/* ===== Site-wide safe tweaks for case-sider (påvirker IKKE navbar) ===== */
+
+/* 1) Giv plads nederst på mobil, så indhold ikke gemmer sig bag en evt. fast bund-nav (din header bruger ikke det her, men safe alligevel) */
+@media (max-width: 767px){
+  main{ padding-bottom: 80px; }
+}
+
+/* 2) Mindre typografi på mobil – KUN inde i <main> */
+@media (max-width: 480px){
+  main h1{ font-size: 26px; line-height: 1.22; }
+  main h2{ font-size: 20px; line-height: 1.25; }
+  main p{  font-size: 14px; }
+  main .sub{ font-size: 16px; }
+  main .lead{ font-size: 12px; }
+}
+
+/* 3) Knapper lidt mindre på mobil – KUN inde i <main> */
+@media (max-width: 480px){
+  main .btn{
+    padding: 9px 12px;
+    border-radius: 10px;
+    font-size: .9rem;
+  }
+  main .hero-copy .cta{ gap: 8px; }
+}
+
+/* 4) Karussel-billeder: centrer og begræns størrelse på små skærme (kun i main) */
+@media (max-width: 480px){
+  main .slider .track{ align-items: center; }
+  main .slider .slide{ display: flex; justify-content: center; }
+  main .slider .slide figure{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+  }
+  main .slider .slide img{
+    max-height: 68vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+}

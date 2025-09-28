@@ -1,0 +1,175 @@
+/* =========================================================
+   KOGEBOG – overlay der læses efter airportcase.css
+   (kun siderelaterede ting, ikke global navbar)
+   ========================================================= */
+
+/* 1) Let farvet hero (subtil) */
+.hero{
+  background:
+    linear-gradient(#fff, #fff);
+  padding: 22px 0 36px;  /* top | sider | bund */
+}
+@media (min-width:768px){
+  .hero{ padding: 28px 0 52px; }
+}
+
+/* 2) Primær/sekundær knapper */
+.btn.primary{
+  background:var(--accent);
+  color:#fff;
+  border:1px solid var(--accent);
+  box-shadow:0 1px 0 rgba(0,0,0,.02);
+}
+.btn.primary:hover{ filter:brightness(.94) }
+
+.btn.ghost-accent{
+  border-color:var(--accent);
+  color:var(--accent);
+  background:transparent;
+}
+.btn.ghost-accent:hover{
+  background:rgba(25,169,116,.06);
+  text-decoration:none;
+}
+
+/* 3) Opskriftshoved */
+.recipe-head{
+  display:flex; flex-wrap:wrap; gap:10px;
+  align-items:center; margin:10px 0 6px;
+}
+.recipe-meta{ display:flex; gap:10px; flex-wrap:wrap; }
+.meta-pill{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:8px 12px; border-radius:999px;
+  border:1px solid var(--edge); background:#fff;
+  color:var(--text);
+  font-weight:500;
+}
+
+/* 4) Børnevenlige badges */
+.badge{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:8px 10px; border-radius:999px; font-weight:600;
+  border:1px solid var(--edge);
+}
+.badge.kids-easy{ background:#ecfdf5; color:#065f46; }
+.badge.kids-mid{  background:#fff7ed; color:#9a3412; }
+
+/* 5) “Erstatninger” knapper */
+.subtle-btn{
+  background:#fff; border:1px solid var(--edge);
+  padding:8px 12px; border-radius:10px;
+  color:var(--ink); text-decoration:none; display:inline-flex; gap:8px;
+}
+.subtle-btn:hover{ background:#f9fafb }
+
+/* 6) Små kort/sektioner */
+.card{
+  background:#fff; border:1px solid var(--edge);
+  border-radius:12px; padding:14px;
+}
+
+/* 7) Mini-labels */
+.label{
+  display:inline-block; padding:6px 10px; border:1px solid var(--edge);
+  background:#fff; border-radius:999px; font-size:.92rem; color:var(--ink);
+}
+
+/* 8) Før/Efter slider – mindre boks + contain */
+#before-after .ba-compare{
+  --pos:50%;
+  position:relative;
+  width:100%;
+  max-width: 860px;
+  margin:14px auto;
+  border:1px solid var(--edge);
+  border-radius:12px;
+  overflow:hidden;
+  background:#fff;
+  aspect-ratio:16/9;
+}
+@media (min-width:1200px){
+  #before-after .ba-compare{ max-width: 900px; }
+}
+.ba-img{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:contain;
+  display:block;
+  background:#fff;
+}
+.ba-after{ z-index:1 }
+.ba-before{ z-index:2; clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
+.ba-range{ position:absolute; inset:0; width:100%; height:100%; opacity:0; cursor:ew-resize; z-index:5; }
+.ba-handle{ position:absolute; top:0; bottom:0; left:var(--pos); width:0; transform:translateX(-50%); z-index:4; }
+.ba-handle::before{ content:""; position:absolute; top:0; bottom:0; left:0; width:1px; background:var(--edge); box-shadow:0 0 0 1px rgba(0,0,0,.02); }
+.ba-handle span{
+  position:absolute; top:50%; left:0; transform:translate(-50%,-50%);
+  width:36px; height:36px; border-radius:999px; background:#fff; border:1px solid var(--edge);
+  display:grid; place-items:center; box-shadow:0 6px 22px rgba(0,0,0,.10);
+}
+.ba-handle span::before{ content:"↔"; font-size:18px; color:var(--ink); line-height:1; }
+.ba-badges .ba-tag{
+  position:absolute; top:10px; padding:6px 10px; border:1px solid var(--edge); border-radius:999px;
+  background:#fff; color:var(--ink); font-weight:600; font-size:.92rem; z-index:6;
+}
+.ba-badges .before{ left:10px } .ba-badges .after{ right:10px }
+
+/* 9) Slider – centrering og ens højde (OVERSKRIVER airportcase.css) */
+.slider .viewport{ overflow:hidden; }
+.slider .track{ align-items:stretch; }
+.slider .slide figure{
+  height: 420px;
+  display:flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+  margin:0; padding:10px;
+  border:1px solid var(--edge);
+  border-radius:12px;
+  background:#f8f8fa;
+}
+.slider .slide img{
+  height:100% !important;   /* udfyld højden af figuren */
+  width:auto !important;     /* bevar proportioner */
+  max-width:100% !important;
+  object-fit:contain !important;
+  margin:0 auto !important;
+}
+
+/* 9b) Mobil- og lille tablet-tilpasninger */
+@media (max-width:480px){
+  .slider .slide figure{ height:240px !important; padding:6px !important; border:0 !important; background:#fff !important; }
+  .dots{ margin-top:8px !important; }
+}
+@media (min-width:481px) and (max-width:767px){
+  .slider .slide figure{ height:300px !important; }
+}
+
+/* 10) Slider-punktfarve */
+.slider .dots button[aria-current="true"]{ background:var(--accent); }
+
+/* =========================================================
+   VIGTIGT: Scope AL slider-“nav” styling til slideren
+   (så headerens <nav class="nav"> ikke påvirkes)
+   ========================================================= */
+.slider button.nav,
+.slider .nav{
+  background:transparent;
+  color:var(--ink);
+  border:1px solid var(--edge);
+  padding:8px 12px;
+  border-radius:10px;
+  cursor:pointer;
+}
+.slider button.nav:disabled,
+.slider .nav:disabled{
+  opacity:.35; cursor:not-allowed;
+}
+
+/* Ekstra sikkerhed: header-nav bør aldrig få kant/padding fra case-CSS */
+header > nav.nav{
+  background:#fff;
+  border:none;
+  padding:0;
+  border-radius:0;
+}

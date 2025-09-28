@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cycler – case</title>
+
+  <!-- Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="cycler.css">
+</head>
+<body>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="bg" aria-hidden="true"></div>
+
+    <header class="title">
+      <h1 id="hero-title">
+        <span class="h1l1">Cycler – en</span>
+        <span class="h1l2">belønningsapp&nbsp;til</span>
+        <span class="h1l3">grøn transport</span>
+      </h1>
+    </header>
+
+    <figure class="phones" aria-label="App-visning">
+      <img src="cycler.img/loginoglåswidget.png" alt="To telefonskærme fra Cycler">
+    </figure>
+
+    <figure class="pattern">
+      <img src="cycler.img/Skærmbillede 2025-09-21 kl. 13.11.43.png" alt="Cykelmønster">
+    </figure>
+
+    <div class="copy">
+      <p class="lead">
+        Et Design Thinking-projekt med fokus på at motivere flere til at vælge cyklen eller gåturen i hverdagen.
+        Cycler belønner grøn transportadfærd og gør den synlig, social og sjov.
+      </p>
+      <nav class="cta">
+        <a class="btn" href="https://www.figma.com/design/tj76yOqt8O3V5emqJOu8Vk/Design-thinking---prototype?node-id=0-1&t=JzV14mUsfw4T06RM-1" target="_blank" rel="noopener">Se prototypen i figma</a>
+        <a class="btn" href="#proces">Spring til process</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ============ UDFORDRING/PROBLEMSTILLING ============ -->
+  <section id="problem" class="section">
+    <div class="container">
+      <h2>Udfordring og problemstilling</h2>
+      <p>
+        Mange vælger bil eller offentlig transport – også på korte stræk – selvom cykling og gang både er sundere
+        og mere bæredygtigt. Hvordan kan vi sænke friktionen og øge motivationen for at vælge en grønnere
+        hverdagstransport?
+      </p>
+
+      <p class="problem-pill">
+        <strong>Problemformulering:</strong> Hvordan kan vi bruge teknologi til at gøre cykling og gående transport mere attraktivt?
+      </p>
+    </div>
+  </section>
+
+  <!-- =================== LØSNING =================== -->
+  <section id="solution" class="section">
+    <div class="container">
+      <h2>Løsningen</h2>
+      <p class="muted">
+        Cycler motiverer gennem belønninger, fællesskab og indsigt. I denne version (3 ugers studieprojekt/MVP)
+        demonstreres funktionerne i en hi-fi prototype.
+      </p>
+
+      <div class="features">
+        <article class="feat">
+          <img class="feat-icon" src="cycler.img/trackingogpointsystem.png" alt="Tracking ikon">
+          <h3>Tracking & pointsystem</h3>
+          <p>Manuel start/stop. Brugeren optjener point pr. tur og kan se samlet fremgang.</p>
+        </article>
+
+        <article class="feat">
+          <img class="feat-icon" src="cycler.img/point.png" alt="Belønninger ikon">
+          <h3>Belønninger</h3>
+          <p>Konceptet vises i prototypen: point kan indløses til rabatter/fordele (mockede vouchers i casen).</p>
+        </article>
+
+        <article class="feat">
+          <img class="feat-icon" src="cycler.img/challengesogfælleskab.png" alt="Challenge ikon">
+          <h3>Challenges & fællesskab</h3>
+          <p>Udfordringer og venneelementer skaber positiv motivation (testet i low-/mid-fi).</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== KARRUSEL =================== -->
+  <section id="screens" class="section">
+    <div class="container">
+      <h2>Udvalgte screens fra Hi-fi prototypen</h2>
+
+      <div class="carousel" aria-roledescription="carousel">
+        <button class="car-btn prev" aria-label="Forrige" disabled>‹</button>
+
+        <div class="car-viewport" tabindex="0" aria-live="polite">
+          <ul class="car-track">
+            <li class="car-slide">
+              <figure>
+                <img src="cycler.img/belønninger.png" alt="Belønninger – oversigt">
+                <figcaption>Belønninger</figcaption>
+              </figure>
+            </li>
+            <li class="car-slide">
+              <figure>
+                <img src="cycler.img/eksempelpårute.png" alt="Eksempel på rute">
+                <figcaption>Eksempel på rute</figcaption>
+              </figure>
+            </li>
+            <li class="car-slide">
+              <figure>
+                <img src="cycler.img/challenges.png" alt="Challenge">
+                <figcaption>Challenge</figcaption>
+              </figure>
+            </li>
+            <li class="car-slide">
+              <figure>
+                <img src="cycler.img/profil.png" alt="Profil/point">
+                <figcaption>Profil/point</figcaption>
+              </figure>
+            </li>
+            <li class="car-slide">
+              <figure>
+                <img src="cycler.img/dinedelteruter.png" alt="Dine delte ruter">
+                <figcaption>Dine delte ruter</figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+
+        <button class="car-btn next" aria-label="Næste" disabled>›</button>
+
+        <div class="car-dots" aria-label="Slide navigation">
+          <button class="dot active" aria-label="Side 1"></button>
+          <button class="dot" aria-label="Side 2"></button>
+          <button class="dot" aria-label="Side 3"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== LANDINGPAGE ============== -->
+  <section class="container">
+    <h2>Landingpage</h2>
+    <div class="landing">
+      <img src="cycler.img/landingpage.png" alt="Cycler landingpage fuld visning">
+    </div>
+  </section>
+
+  <!-- ============== DESIGNPROCES (DESIGN THINKING) ============== -->
+  <section id="process" class="section dt">
+    <div class="container">
+      <h2 class="heading">Designproces (Design Thinking)</h2>
+  
+      <div class="grid">
+        <!-- 1 -->
+        <article class="card">
+          <span class="num">1</span>
+          <h3>Understand & Empathize</h3>
+          <p>Research af transportvaner, interviews og målgruppeanalyse for at afdække barrierer og motivation.</p>
+          <div class="chips">
+            <span class="chip">Personas</span>
+            <span class="chip">Insights</span>
+            <span class="chip">Problemrum</span>
+          </div>
+        </article>
+  
+        <!-- 2 -->
+        <article class="card">
+          <span class="num">2</span>
+          <h3>Define & Ideate</h3>
+          <p>Fem koncepter → top 3 (belønninger · grøn ruteplanlægning · trygge gå-ruter) → capture grid → medium-fidelity wireframes → test.</p>
+          <div class="chips">
+            <span class="chip">Moodboard</span>
+            <span class="chip">Sitemap</span>
+            <span class="chip">Styleguide</span>
+          </div>
+        </article>
+  
+        <!-- 3 -->
+        <article class="card">
+          <span class="num">3</span>
+          <h3>Prototype & Test</h3>
+          <p>Low-fidelity test af IA/flows → high-fidelity prototype i Figma → landingpage som kampagneside.</p>
+          <div class="chips">
+            <span class="chip">Lo-fi</span>
+            <span class="chip">Hi-fi</span>
+            <span class="chip">Iteration</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  
+  <!-- (anker beholdes som id på sektionen ovenfor) -->
+
+  <!-- (Valgfri) din JS kan blive her hvis du bruger den -->
+</body>
+</html>
+
+  <!-- =================== JS – KARRUSEL =================== -->
+  <script>
+  (function(){
+    const carousels = document.querySelectorAll('.carousel');
+    carousels.forEach(initCarousel);
+
+    function initCarousel(root){
+      const track    = root.querySelector('.car-track');
+      const slides   = Array.from(root.querySelectorAll('.car-slide'));
+      const prevBtn  = root.querySelector('.prev');
+      const nextBtn  = root.querySelector('.next');
+      const dotsBox  = root.querySelector('.car-dots');
+      const viewport = root.querySelector('.car-viewport');
+
+      let spv = 1;                 // slides per view
+      let pageIndex = 0;           // 0..totalPages-1
+      let totalPages = 1;
+
+      function readSPV(){
+        const w = window.innerWidth;
+        const m = +root.dataset.spvMobile  || 1;
+        const t = +root.dataset.spvTablet  || 2;
+        const d = +root.dataset.spvDesktop || 2;
+        spv = w >= 1100 ? d : w >= 768 ? t : m;
+
+        // sæt slide-bredder
+        const widthPct = (100 / spv) + '%';
+        slides.forEach(s => s.style.flex = `0 0 ${widthPct}`);
+
+        // antal sider = grupper af spv
+        totalPages = Math.max(1, Math.ceil(slides.length / spv));
+
+        // (re)build dots
+        dotsBox.innerHTML = Array.from({length: totalPages})
+          .map((_,i)=>`<button class="dot" aria-label="Gå til side ${i+1}"></button>`).join('');
+        dotsBox.querySelectorAll('.dot').forEach((dot,i)=>{
+          dot.addEventListener('click', ()=>{ pageIndex = i; update(); });
+        });
+
+        // clamp page og opdater
+        pageIndex = Math.min(pageIndex, totalPages - 1);
+        update(true);
+      }
+
+      function update(noAnim){
+        // flyt én SIDE ad gangen: pageIndex * (100%)
+        const slideWidthPct = 100 / spv;             // bredde pr. slide
+        const index = pageIndex * spv;               // første slide i siden
+        const offset = -(index * slideWidthPct);     // procent-baseret offset
+        if(noAnim){ track.style.transition = 'none'; }
+        track.style.transform = `translateX(${offset}%)`;
+        if(noAnim) requestAnimationFrame(()=> track.style.transition = '');
+
+        prevBtn.disabled = (pageIndex === 0);
+        nextBtn.disabled = (pageIndex >= totalPages - 1);
+
+        dotsBox.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active', i === pageIndex));
+      }
+
+      prevBtn.addEventListener('click', ()=>{ if(pageIndex>0){ pageIndex--; update(); } });
+      nextBtn.addEventListener('click', ()=>{ if(pageIndex<totalPages-1){ pageIndex++; update(); } });
+
+      // keyboard
+      viewport.addEventListener('keydown', (e)=>{
+        if(e.key === 'ArrowLeft')  prevBtn.click();
+        if(e.key === 'ArrowRight') nextBtn.click();
+      });
+
+      // drag/touch (simpelt)
+      let startX = 0, curX = 0, dragging = false;
+      function start(x){ dragging=true; startX=curX=x; track.style.transition='none'; }
+      function move(x){
+        if(!dragging) return;
+        curX = x;
+        const dx = (curX - startX) / viewport.clientWidth;
+        const slideWidthPct = 100 / spv;
+        const index = pageIndex * spv;
+        const base = -(index * slideWidthPct);
+        track.style.transform = `translateX(calc(${base}% + ${dx*100}%))`;
+      }
+      function end(){
+        if(!dragging) return;
+        dragging=false; track.style.transition='';
+        const dx = (curX - startX);
+        if(Math.abs(dx) > viewport.clientWidth * 0.15){
+          if(dx < 0 && pageIndex < totalPages-1) pageIndex++;
+          if(dx > 0 && pageIndex > 0)            pageIndex--;
+        }
+        update();
+      }
+      viewport.addEventListener('mousedown', e=>start(e.clientX));
+      viewport.addEventListener('mousemove', e=>move(e.clientX));
+      viewport.addEventListener('mouseup', end);
+      viewport.addEventListener('mouseleave', end);
+      viewport.addEventListener('touchstart', e=>start(e.touches[0].clientX), {passive:true});
+      viewport.addEventListener('touchmove', e=>move(e.touches[0].clientX), {passive:true});
+      viewport.addEventListener('touchend', end);
+
+      window.addEventListener('resize', readSPV, {passive:true});
+      readSPV();
+    }
+  })();
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

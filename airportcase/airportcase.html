@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Seniorvenligt check-in for KLM</title>
+
+  <!-- Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Kun denne CSS (ingen eksternt nav-stylesheet) -->
+  <link rel="stylesheet" href="airportcase.css">
+  <link rel="stylesheet" href="../index/navigationsbar/nav-bar-test.css?v=2">
+  
+</head>
+<body>
+
+  <!-- HEADER (uændret markup) -->
+  <header class="site-header">
+    <a href="../index/index.html"><h1>PORTFOLIO</h1></a>
+    <nav class="nav">
+      <ul>
+        <li><a href="../aboutme/AboutMe.html">ABOUT ME</a></li>
+
+        <li class="dropdown">
+          <a href="../atelier/atelier.html">ATELIER</a>
+        </li>
+
+        <li class="dropdown">
+          <a href="../schoolprojects/schoolprojects.html">SCHOOL PROJECTS</a>
+          <div class="dropdown-content">
+            <a href="../2semesterprojekter/2semester.html">2. Semester</a>
+            <a href="../3semesterprojekter/3semesterprojekter.html">3. Semester</a>
+            <a href="">4. Semester</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="breadcrumbs"><a href="#">School Projects</a> / <a href="#">3. Semester</a> / Redesign af check in stander</p>
+
+        <h1>Seniorvenligt check-in for KLM</h1>
+        <p class="sub">Redesign af Check-in Standere i Københavns Lufthavn</p>
+
+        <p class="lead">
+          I dette projekt har vi arbejdet med at redesigne brugeroplevelsen af KLM’s check-in standere
+          i Københavns Lufthavn. Check-in standere er ofte det første møde med flyselskabet – og for mange
+          især ældre brugere kan oplevelsen være præget af stress, tekniske udfordringer og uoverskuelige valg.
+        </p>
+
+        <div class="cta">
+          <a class="btn ghost" href="#" target="_blank" rel="noopener">Åbn prototype i Figma</a>
+          <a class="btn" href="#process">Spring til proces</a>
+        </div>
+      </div>
+
+      <figure class="kiosk">
+        <img src="airportcase.img/klmstander.png" alt="KLM check-in stander">
+      </figure>
+    </div>
+  </section>
+
+  <main class="wrap">
+
+    <!-- Problem -->
+    <section class="section tight" id="problem">
+      <h2>Problemstilling & udfordring</h2>
+      <p>
+        Check-in standere er ofte første møde med flyselskabet – men kan være stressende: bagage, kø,
+        støj og usikkerhed omkring teknologi. Særligt ældre rejsende kæmper med små ikoner, for mange valg
+        og uklar feedback. Opgaven var at designe et trygt, effektivt og seniorvenligt interface til KLM’s
+        stander i Københavns Lufthavn.
+      </p>
+      <p><strong>Hvem rammer det?</strong></p>
+      <p class="lead">Vi har taget udgangspunkt i en persona …</p>
+      
+        Vi har taget udgangspunkt i en persona: pensionistparret Jens &amp; Karen (72 og 69 år), der
+        elsker at rejse men oplever usikkerhed og nervøsitet i mødet med teknologi. De efterspørger
+        en mere tryg, enkel og guidet proces.
+      </p>
+    </section>
+
+    <!-- Persona -->
+    <section class="section persona" id="persona">
+      <h2>Mød vores persona</h2>
+      <div class="persona-grid">
+        <figure class="persona-card">
+          <img src="airportcase.img/billedeafpersona.png" alt="Karen og Jens – pensionister">
+        </figure>
+        <div class="persona-copy">
+          <div class="persona-notes">
+            <h4>Baggrund</h4>
+            <p>Pensioneret par fra Danmark; rejser for at besøge familie og tage på ferie i Sydeuropa. God tid – men kan blive stressede i travle omgivelser.</p>
+            <h4>Motivation og mål</h4>
+            <ul class="persona-list">
+              <li>Undgå stress/fejl; være trygge og godt forberedt</li>
+              <li>Enkelt, roligt og <em>guidet</em> forløb, der forklarer næste skridt</li>
+            </ul>
+            <h4>Smertepunkter</h4>
+            <ul class="persona-list">
+              <li>Små knapper og mange valg</li>
+              <li>Utydelig feedback (“er jeg nu checket rigtigt ind?”)</li>
+              <li>Pres fra bagage/kø/støj</li>
+            </ul>
+            <blockquote class="persona-quote">“Jeg vil bare være sikker på, at alt er i orden – så jeg kan nyde rejsen uden stress.”</blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Løsning -->
+    <section class="section tight" id="solution">
+      <h2>Løsningen</h2>
+      <p>Fokus: Senior-Mode (større tekst, høj kontrast, færre valg pr. skærm), venlige fejlbeskeder,
+        forenklet tastatur og “Trygheds-Print” på boardingkort og bagtags.</p>
+    </section>
+
+    <!-- Udvalgte frames -->
+    <section class="section" id="prototype">
+      <h2>Udvalgte frames fra prototype (Hi-Fi)</h2>
+      <div class="slider" aria-label="Skærmgalleri">
+        <button class="nav prev" aria-label="Forrige">‹</button>
+        <div class="viewport" aria-live="polite">
+          <ul class="track">
+            <li class="slide">
+              <figure>
+                <img src="airportcase.img/startogseniorMode.png" alt="Start & Senior-Mode">
+                <figcaption>Start &amp; Senior-Mode</figcaption>
+              </figure>
+            </li>
+            <li class="slide">
+              <figure>
+                <img src="airportcase.img/scanningigang.png" alt="Scanning">
+                <figcaption>Scanning</figcaption>
+              </figure>
+            </li>
+            <li class="slide">
+              <figure>
+                <img src="airportcase.img/fejlvedpas.png" alt="Fejl ved pas-scan">
+                <figcaption>Fejl ved pas-scan</figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+        <button class="nav next" aria-label="Næste">›</button>
+        <div class="dots" aria-label="Slide navigation"></div>
+      </div>
+    </section>
+
+    <!-- Rich picture -->
+    <section class="section" id="process">
+      <h2>Rich Picture</h2>
+      <p class="muted">Overblik over aktører, omgivelser og følelser i mødet med check-in standeren: travlhed, kø-pres
+        og teknologi-usikkerhed → behov for ro, tydelig guiding og bekræftelse.</p>
+      <figure class="fullwidth">
+        <img src="airportcase.img/richpicture.jpg" alt="Rich picture">
+      </figure>
+      <div class="details-card" style="margin-top:10px">
+        <details>
+          <summary>Læs mere</summary>
+          <div class="more rp-notes">
+            <h3 class="rp-title">Rich Picture – Pensionisters møde med check-in standeren</h3>
+            <p>Dette Rich Picture illustrerer de vigtigste faktorer, der påvirker pensionisters oplevelse…</p>
+            <h4>Brugeren (Jens &amp; Karen)</h4>
+            <p>Pensionistparret møder teknologien med en vis nervøsitet og usikkerhed…</p>
+            <h4>Omgivelserne</h4>
+            <p>Lufthavnen er præget af travlhed, støj og kø…</p>
+            <h4>Teknologien</h4>
+            <p>Selve check-in standeren, boardingpas-printeren og bagdrop-automaten…</p>
+            <h4>Relationer</h4>
+            <ul class="rp-list">
+              <li><strong>Til KLM:</strong> Flyselskabet ønsker en effektiv og selvbetjent proces…</li>
+              <li><strong>Til lufthavnspersonalet:</strong> Personalet kan tilbyde hjælp…</li>
+            </ul>
+            <h4>Følelser</h4>
+            <p>…lettelse og tryghed.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Research -->
+    <section class="section">
+      <h2>Research & indsigter</h2>
+      <p class="muted">Feltarbejde i Københavns Lufthavn…</p>
+      <figure class="fullwidth">
+        <img src="airportcase.img/feltarbejde.png" alt="Feltarbejde i lufthavnen">
+      </figure>
+    </section>
+
+    <!-- Journey før -->
+    <section class="section" id="journey-before">
+      <h2>Customer journey map (før)</h2>
+      <p class="muted">Oversigt over den nuværende oplevelse…</p>
+      <figure class="fullwidth">
+        <img src="airportcase.img/customerjourneymapfør.png" alt="Customer journey før">
+      </figure>
+      <div class="details-card">
+        <details>
+          <summary>Læs mere</summary>
+          <div class="more">
+            <!-- indhold forkortet for overblik -->
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Feature set -->
+    <section class="section" id="features">
+      <h2>Feature set</h2>
+      <p class="lead">Fire greb…</p>
+      <div class="slider" aria-label="Feature-galleri">
+        <button class="nav prev" aria-label="Forrige">‹</button>
+        <div class="viewport" aria-live="polite">
+          <ul class="track">
+            <li class="slide"><figure><img src="airportcase.img/feature1.png" alt=""><figcaption>Senior-Mode</figcaption></figure></li>
+            <li class="slide"><figure><img src="airportcase.img/feature2.png" alt=""><figcaption>Venlige fejl</figcaption></figure></li>
+            <li class="slide"><figure><img src="airportcase.img/feature3.png" alt=""><figcaption>Forenklet tastatur</figcaption></figure></li>
+            <li class="slide"><figure><img src="airportcase.img/feature4.png" alt=""><figcaption>Trygheds-Print</figcaption></figure></li>
+          </ul>
+        </div>
+        <button class="nav next" aria-label="Næste">›</button>
+        <div class="dots" aria-label="Slide navigation"></div>
+      </div>
+      <div class="details-card" style="margin-top:12px">
+        <details>
+          <summary>Læs mere</summary>
+          <div class="more">
+            <!-- indhold forkortet -->
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Journey efter -->
+    <section class="section" id="journey-after">
+      <h2>Customer journey map (efter)</h2>
+      <p class="muted">Denne journey viser, hvordan oplevelsen forbedres…</p>
+      <figure class="fullwidth">
+        <img src="airportcase.img/customerjourneymapefter.png" alt="Journey efter">
+      </figure>
+      <div class="details-card">
+        <details>
+          <summary>Læs mere</summary>
+          <div class="more">
+            <!-- indhold forkortet -->
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Flowchart -->
+    <section class="section flowchart" id="flow">
+      <h2>Flowchart</h2>
+      <div class="flowchart-grid">
+        <div class="flowchart-copy">
+          <p class="muted">Diagrammet viser <strong>hele interaktionen</strong>…</p>
+          <ul class="muted flowchart-bullets">
+            <li><strong>Hvad brugeren gør</strong>…</li>
+            <li><strong>Hvad systemet viser</strong>…</li>
+            <li><strong>Hvor features</strong>…</li>
+          </ul>
+        </div>
+        <figure class="flowchart-fig">
+          <img src="airportcase.img/flowchart.png" alt="Flowchart for KLM’s senior-tilstand">
+        </figure>
+      </div>
+    </section>
+
+    <!-- Rolle -->
+    <section class="section">
+      <h2>Min rolle & læring</h2>
+      <ul class="muted">
+        <li>Ansvarlig for research, analyse og visualisering…</li>
+        <li>Designede hi-fi prototypen i Figma.</li>
+        <li>Lærte hvordan simple designgreb…</li>
+      </ul>
+    </section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="footer-title">CONTACT ME</p>
+      <ul class="footer-list">
+        <li><a class="footer-link" href="tel:+4542404706">+45 42 40 47 06</a></li>
+        <li><a class="footer-link" href="mailto:Rosanygaarddreyer@gmail.com">Rosanygaarddreyer@gmail.com</a></li>
+        <li><a class="footer-link" href="#" rel="noopener">LinkedIn</a></li>
+        <li>
+          <a class="footer-link" href="https://www.tiktok.com/@artbyrnd3?_r=1&_d=secCgYIASAHKAESPgo8X%2BAFubUjBgwzIQhBqpL39z3VYUuPZrnoaPKEHuu3hIxKa8E5Optn92PWylP%2FajgGTGk2qolOG7cDJEJPGgA%3D&_svg=2&checksum=0fd42cfc3fb94438dd041c9c089158bfbcd9c8da95e8f716f2f7479a9a8148ad&item_author_type=1&sec_uid=MS4wLjABAAAAikHZUig2hhnuMXgENuC1M-WBl_loFzcko-MKBHu_vp-hYGFMl3_3R4ryBGQdVquM&sec_user_id=MS4wLjABAAAAikHZUig2hhnuMXgENuC1M-WBl_loFzcko-MKBHu_vp-hYGFMl3_3R4ryBGQdVquM&share_app_id=1233&share_author_id=7343351272483423264&share_link_id=06E59B1B-2EE2-4F4E-9008-3CBCFBAE9D79&share_scene=1&sharer_language=en&social_share_type=4&source=h5_m&timestamp=1759069103&tt_from=copy&u_code=ed212i8hb1i7a0&ug_btm=b8727%2Cb0&user_id=7343351272483423264&utm_campaign=client_share&utm_medium=ios&utm_source=copy"
+             target="_blank" rel="noopener">TikTok @artbyrnd3</a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+  
+  <script src="airportcase.js"></script>
+  <script src="../nav.js" defer></script>
+</body>
+</html>

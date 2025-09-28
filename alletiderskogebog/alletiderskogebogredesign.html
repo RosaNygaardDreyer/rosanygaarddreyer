@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Redesign af Alletiders Kogebog</title>
+
+  <!-- Samme font og base-stil som din Airport-case -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../airportcase/airportcase.css">
+  <link rel="stylesheet" href="kogebog.css">
+  <link rel="stylesheet" href="../index/navigationsbar/nav-bar-test.css?v=2">
+</head>
+<body>
+
+    <!-- HEADER (uændret markup) -->
+    <header class="site-header">
+      <a href="../index/index.html"><h1>PORTFOLIO</h1></a>
+      <nav class="nav">
+        <ul>
+          <li><a href="../aboutme/AboutMe.html">ABOUT ME</a></li>
+  
+          <li class="dropdown">
+            <a href="../atelier/atelier.html">ATELIER</a>
+          </li>
+  
+          <li class="dropdown">
+            <a href="../schoolprojects/schoolprojects.html">SCHOOL PROJECTS</a>
+            <div class="dropdown-content">
+              <a href="../2semesterprojekter/2semester.html">2. Semester</a>
+              <a href="../3semesterprojekter/3semesterprojekter.html">3. Semester</a>
+              <a href="">4. Semester</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+  <!-- HERO / INTRO -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="breadcrumbs"><a href="#">School Projects</a> / <a href="#">3. Semester</a> / Redesign</p>
+
+        <h1>Redesign af Alletiders Kogebog</h1>
+        <p class="sub">Allergivenlige og børnevenlige opskrifter – hurtigere at finde, nemmere at lave</p>
+
+        <p class="lead">
+          Casen handler om at gøre opskrifter <strong>nemme at tilpasse til allergi</strong> og
+          <strong>sjove for børn at hjælpe med</strong>. Vi arbejdede research-drevet og testede løbende
+          for at sikre et roligt flow, tydelige handlinger og tryghed for travle familier.
+        </p>
+
+        <div class="cta">
+          <a class="btn" href="#result">Se løsning</a>
+          <a class="btn ghost" href="#process">Spring til proces</a>
+        </div>
+      </div>
+
+      <figure class="kiosk">
+        <img src="alletiderskogebog.img/logo.png" alt="Mockup af redesign – Alletiders Kogebog">
+      </figure>
+    </div>
+  </section>
+
+  <main class="wrap">
+
+    <!-- PROBLEM -->
+    <section class="section tight" id="problem">
+      <h2>Problemstilling & udfordring</h2>
+        Alletiders Kogebog gør det muligt at finde mange opskrifter, men allergi-håndtering kræver for mange klik,
+        børnevenlige trin er svære at afkode (farvekoder), og navigationen gør det uklart, hvor man er – især når man hopper
+        mellem lister → opskrift → tilpasning. I en travl hverdag betyder det mere tøven og spildtid og færre opskrifter,
+        der rent faktisk bliver lavet.
+      </p>
+      <p><strong>Hvem rammer det?</strong><br>
+        Vores persona er en travl familie med et barn med nøddeallergi og børn, der tit brokker sig over grøntsager.
+        De vil kunne <em>filtrere og tilpasse opskrifter hurtigt og trygt</em>, <em>engagere børn med små, overskuelige opgaver</em>,
+        og <em>navigere uden at blive væk</em>.
+      </p>
+    </section>
+
+    <!-- LØSNING / RESULTAT -->
+    <section class="section tight" id="result">
+      <h2>Løsning & resultat (kort)</h2>
+      <ul>
+        <li><strong>Nøddefri direkte i opskriften</strong> med automatiske erstatningsforslag (fx hakkede nødder → ristede kikærter).</li>
+        <li><strong>Tidsestimat/portioner</strong> flyttet op i opskriftshovedet, så planlægning sker før man scroller.</li>
+        <li><strong>Børnevenlige trin</strong> skiftet fra farvekoder til to ikon-niveauer (Let / Mellemsvær) → mindre kognitiv støj.</li>
+        <li><strong>Klar navigation</strong> med brødkrummesti + tydelige primærknapper.</li>
+      </ul>
+      <p class="muted"><strong>Effekt (forventet):</strong> Færre klik for allergi-tilpasning, hurtigere beslutning
+        om retten passer tiden, og roligere flow når børn hjælper – samlet set mere handling, mindre tøven.</p>
+    </section>
+
+    <!-- FØR / EFTER -->
+    <section class="section" id="before-after">
+      <h2>Før / Efter</h2>
+      <p class="muted"><strong>Sådan læses slideren:</strong> Træk håndtaget for at se, hvordan de samme elementer er forbedret:
+        allergi-tilpasning ligger nu <em>inde i opskriften</em>, tid/portioner er tydelig i toppen, ikon-trin for børn
+        erstatter farvekoder, og brødkrummesti viser hvor du er.</p>
+
+      <div class="ba-compare" data-label-before="Før" data-label-after="Efter">
+        <img class="ba-img ba-before" src="alletiderskogebog.img/førbillede.png"  alt="Før: original visning">
+        <img class="ba-img ba-after"  src="alletiderskogebog.img/efterbillede.png" alt="Efter: redesign">
+        <div class="ba-handle" aria-hidden="true"><span></span></div>
+        <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Sammenlign før og efter">
+        <div class="ba-badges">
+          <span class="ba-tag before">Før</span>
+          <span class="ba-tag after">Efter</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Desktop Research / Trustpilot -->
+    <section class="section" id="desktop-research">
+      <h2>Desktop research: Hvad siger brugerne allerede?</h2>
+      <p><strong>Hvorfor denne metode?</strong> Hurtigt overblik over eksisterende smertepunkter uden rekruttering.</p>
+      <p><strong>Hvad vi fandt (Trustpilot):</strong> “Visuelt præg af 1993-design” → behov for enkelt hierarki og typografi.
+        “For mange reklamer/elementer” → vi prioriterer primære handlinger og skærer støj væk.</p>
+
+      <div class="slider" aria-label="Trustpilot-collage">
+        <button class="nav prev" aria-label="Forrige">‹</button>
+        <div class="viewport" aria-live="polite">
+          <ul class="track">
+            <li class="slide"><figure><img src="alletiderskogebog.img/trustpilotrating.png" alt="Trustpilot: overblik"></figure></li>
+            <li class="slide"><figure><img src="alletiderskogebog.img/trustpilot1.png" alt="Trustpilot: reklamer"></figure></li>
+            <li class="slide"><figure><img src="alletiderskogebog.img/trustpilot2.png" alt="Trustpilot: lav score"></figure></li>
+            <li class="slide"><figure><img src="alletiderskogebog.img/trustpilot3.png" alt="Trustpilot: UI-kommentarer"></figure></li>
+          </ul>
+        </div>
+        <button class="nav next" aria-label="Næste">›</button>
+        <div class="dots" aria-label="Slide navigation"></div>
+      </div>
+    </section>
+
+    <!-- Persona (beholdt kort) -->
+    <section class="section persona" id="persona">
+      <h2>Persona (kort)</h2>
+      <div class="persona-grid">
+        <figure class="persona-card">
+          <img src="alletiderskogebog.img/persona.png" alt="Travl familie med barn med nøddeallergi">
+        </figure>
+        <div class="persona-copy">
+          <p><strong>Baggrund:</strong> Travl familie; et barn har nøddeallergi; børnene er skeptiske overfor grøntsager.</p>
+          <div class="persona-notes">
+            <h4>Mål</h4>
+            <ul class="persona-list">
+              <li>Find sikre opskrifter hurtigt</li>
+              <li>Engagér børn med små opgaver</li>
+              <li>Skab mere ro omkring madlavning</li>
+            </ul>
+            <h4>Smertepunkter</h4>
+            <ul class="persona-list">
+              <li>Allergihåndtering tager tid/fokus</li>
+              <li>Utydelige handlinger i opskrifter</li>
+              <li>Børn mister motivationen</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HMW + Dot voting -->
+    <section class="section" id="hmw">
+      <h2>How Might We + Dot voting</h2>
+      <p>Vi omsatte pain points til muligheder (HMW) og prioriterede med dot voting.
+        Top-valg blev: <em>Nøddefri direkte i opskriften</em>, <em>tydeligt tidsestimat</em>, <em>børne-ikoner</em>.</p>
+
+      <div class="slider" aria-label="HMW og Dot vote">
+        <button class="nav prev" aria-label="Forrige">‹</button>
+        <div class="viewport" aria-live="polite">
+          <ul class="track">
+            <li class="slide"><figure><img src="alletiderskogebog.img/HMWoversigt.png" alt="HMW board – oversigt"></figure></li>
+            <li class="slide"><figure><img src="alletiderskogebog.img/Dotvotepriotering.png" alt="Dot voting – prioritering"></figure></li>
+            <li class="slide"><figure><img src="alletiderskogebog.img/userstoriesafledtafHMW.png" alt="User stories – afledt af HMW"></figure></li>
+          </ul>
+        </div>
+        <button class="nav next" aria-label="Næste">›</button>
+        <div class="dots" aria-label="Slide navigation"></div>
+      </div>
+    </section>
+
+    <!-- Sketches / Wireframes (karrusel beholdes) -->
+    <section class="section" id="sketches">
+      <h2>Sketches → Wireframes</h2>
+      <p>Vi skitserede hurtigt på papir og omsatte til kommenterede wireframes for at afklare flow og handlinger tidligt.</p>
+      <div class="slider" aria-label="Sketches">
+        <button class="nav prev" aria-label="Forrige">‹</button>
+        <div class="viewport" aria-live="polite">
+          <ul class="track">
+            <li class="slide"><figure><img src="alletiderskogebog.img/sketch1.png" alt="Sketch: opskriftshoved"></figure></li>
+            <li class="slide"><figure><img src="alletiderskogebog.img/sketch2.png" alt="Sketch: børnevenlig version af opskrift"></figure></li>
+            <li class="slide"><figure><img src="alletiderskogebog.img/kommenteretwireframe.png" alt="Kommenteret wireframe"></figure></li>
+          </ul>
+        </div>
+        <button class="nav next" aria-label="Næste">›</button>
+        <div class="dots" aria-label="Slide navigation"></div>
+      </div>
+    </section>
+
+    <!-- Gangstertest (ny tabel + tekst) -->
+    <section class="section" id="gangster">
+      <h2>Gangstertest – resultater</h2>
+      <p><strong>Formål:</strong> Hurtigt check af IA og navigation: “Hvor er jeg? Hvad kan jeg? Hvor søger jeg?”</p>
+
+      <table class="table" aria-label="Gangstertest-resultater">
+        <thead>
+          <tr>
+            <th>Testperson</th>
+            <th>Underside</th>
+            <th>Point i alt</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Testperson 1</td><td>Søg på opskriftens navn</td><td>12 point i alt</td></tr>
+          <tr><td>Testperson 2</td><td>Skjulte grøntsager</td><td>13 point i alt</td></tr>
+          <tr><td>Testperson 3</td><td>Tilpasset – kokosflage</td><td>13 point i alt</td></tr>
+        </tbody>
+      </table>
+
+      <p class="muted">
+        <span class="badge-ok">Styrker:</span> Titler og søgning var lette at genkende, opskrifter føltes genkendelige.<br>
+        <span class="badge-warn">Svagheder:</span> Global menu/kategorier oplevedes uklare; flere var i tvivl om, <em>hvilken underside</em> de var på, og hvordan de var kommet dertil;
+        enkelte knapper virkede utydelige.
+      </p>
+      <p><strong>Konklusion:</strong> Grundlæggende genkendelse fungerer, men navigation og knap-feedback skal skærpes.</p>
+    </section>
+
+    <!-- Brugertest (tænke-højt) -->
+    <section class="section" id="usability">
+      <h2>Brugertest (tænke-højt)</h2>
+      <p><strong>Hvad vi testede:</strong> Søge → åbne opskrift → gøre nøddefri (erstat forslag) → bruge børnetrin → vurdere tid/portioner.</p>
+      <p><strong>Hvad vi observerede:</strong> Prototypen fungerede i sin kerne: brugeren kunne finde, tilpasse og gennemføre.
+        Udfordringerne lå i UI/UX: knapper var for utydelige, farvekoder til børnetrin skabte forvirring,
+        og vigtig info (tid) druknede nogle steder.</p>
+      <p><strong>Hvad vi ændrer:</strong> Gør primærknapper visuelle og konsekvente, skift farvekoder → to ikon-niveauer
+        (Let/Mellemsvær), løft tid/portioner op i opskriftshovedet, og præcisér tilbage/forrige-navigation.</p>
+      <figure class="fullwidth">
+        <img src="alletiderskogebog.img/brugertetst.png" alt="Udsnit fra tænke-højt brugertesten">
+      </figure>
+    </section>
+
+    <!-- Heuristisk evaluering -->
+    <section class="section" id="heuristics">
+      <h2>Heuristisk evaluering</h2>
+      <p><strong>Metode:</strong> Vi målte vores UI op mod Jakob Nielsens 10 heuristikker for at spotte UI-svagheder uden ny rekruttering.</p>
+      <p><strong>Fund (udpluk):</strong> Systemstatus og kontrol var overvejende tydelig,
+        men konsistens og minimalistisk design led under overflødige valg (fx “nyt forslag” sammen med “tilbage til standard”).
+        Temaer skal være tilgængelige begge steder. Hjælp/diagnose bør være mere kontekstuel.</p>
+      <figure class="fullwidth">
+        <img src="alletiderskogebog.img/heurisitsk.png" alt="Heuristik-oversigt med vores vurderinger">
+      </figure>
+    </section>
+
+    <!-- PROCES (opdateret rækkefølge) -->
+    <section class="section" id="process">
+      <h2>Proces (udvalgte nedslag)</h2>
+      <p>
+        Forløbet strakte sig over to uger. Vi startede med <strong>udlevering af case</strong>, herefter
+        <strong>persona-research</strong> (Broccoli & Bekymringer) og <strong>Team Canvas</strong>.
+      </p>
+      <p>
+        Vi lavede <strong>How Might We</strong>, <strong>User Story</strong>, <strong>Dot Vote</strong>,
+        <strong>Feature List</strong>, <strong>Prioritering</strong> og <strong>StoryPoints</strong> – og samlede et
+        fælles <strong>site map</strong>.
+      </p>
+      <p>
+        Dernæst byggede vi <strong>wireframes</strong> (+ kommenterede versioner), og gik videre til
+        <strong>medium fidelity</strong> og <strong>high fidelity</strong> protypes (internt brug).
+      </p>
+      <p>
+        Til sidst testede vi: <strong>Gangstertest</strong> (IA/mening) og <strong>tænke-højt brugertest</strong> (flow),
+        og afrundede med en <strong>heuristisk evaluering</strong> før præsentation.
+      </p>
+      <figure class="fullwidth" style="margin-top:8px">
+        <img src="alletiderskogebog.img/process.png" alt="Projektplan – uge for uge">
+      </figure>
+    </section>
+
+    <!-- KONKLUSION -->
+    <section class="section" id="conclusion">
+      <h2>Konklusion & læring</h2>
+      <p class="muted">
+        Løsningen gør allergihåndtering <strong>hurtig og tryg</strong>, og børn kan <strong>hjælpe til</strong> via små ikon-trin.
+        Tydelige primærknapper, enkel navigation og fokus på vigtig info reducerer friktion i hverdagen.
+      </p>
+    </section>
+
+    <!-- Min rolle -->
+    <section class="section" id="role">
+      <h2>Min rolle</h2>
+      <ul class="muted">
+        <li>Desktop research, affinity, HMW, dot voting</li>
+        <li>Sketches, wireframes, (interne) prototyper</li>
+        <li>Gangstertest, brugertest (tænke-højt), heuristisk evaluering</li>
+      </ul>
+    </section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="footer-title">CONTACT ME</p>
+      <ul class="footer-list">
+        <li><a class="footer-link" href="tel:+4542404706">+45 42 40 47 06</a></li>
+        <li><a class="footer-link" href="mailto:Rosanygaarddreyer@gmail.com">Rosanygaarddreyer@gmail.com</a></li>
+        <li><a class="footer-link" href="#" rel="noopener">LinkedIn</a></li>
+        <li>
+          <a class="footer-link" href="https://www.tiktok.com/@artbyrnd3?_r=1&_d=secCgYIASAHKAESPgo8X%2BAFubUjBgwzIQhBqpL39z3VYUuPZrnoaPKEHuu3hIxKa8E5Optn92PWylP%2FajgGTGk2qolOG7cDJEJPGgA%3D&_svg=2&checksum=0fd42cfc3fb94438dd041c9c089158bfbcd9c8da95e8f716f2f7479a9a8148ad&item_author_type=1&sec_uid=MS4wLjABAAAAikHZUig2hhnuMXgENuC1M-WBl_loFzcko-MKBHu_vp-hYGFMl3_3R4ryBGQdVquM&sec_user_id=MS4wLjABAAAAikHZUig2hhnuMXgENuC1M-WBl_loFzcko-MKBHu_vp-hYGFMl3_3R4ryBGQdVquM&share_app_id=1233&share_author_id=7343351272483423264&share_link_id=06E59B1B-2EE2-4F4E-9008-3CBCFBAE9D79&share_scene=1&sharer_language=en&social_share_type=4&source=h5_m&timestamp=1759069103&tt_from=copy&u_code=ed212i8hb1i7a0&ug_btm=b8727%2Cb0&user_id=7343351272483423264&utm_campaign=client_share&utm_medium=ios&utm_source=copy"
+             target="_blank" rel="noopener">TikTok @artbyrnd3</a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+  
+  <!-- Din eksisterende JS for sliders og før/efter (uændret) -->
+  <script src="../nav.js" defer></script>
+
+  <script src="kogebog.js"></script>
+</body>
+</html>

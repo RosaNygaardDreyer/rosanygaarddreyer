@@ -1,0 +1,137 @@
+/* ===== GLOBAL ===== */
+html, body { width:100%; min-height:100%; overflow-x:hidden; }
+body{
+  font-family:'Poppins', sans-serif;
+  margin:0; padding:0; box-sizing:border-box;
+  display:flex; flex-direction:column; height:100vh;
+}
+
+/* ===== NAVBAR – identisk med de andre sider ===== */
+
+/* Header styling */
+header { display:flex; flex-direction:column; align-items:center; padding:1rem; }
+h1 { font-size:2rem; margin:0; text-align:center; }
+header a { text-decoration:none; color:inherit; }
+
+/* Logo – mobil */
+.logo{
+  width:100%; max-width:80px;
+  position:relative; bottom:0; top:-15%; left:12%;
+  transform:translateX(-50%); margin-top:8px;
+}
+
+/* Mobil: nav i bunden + drop-up */
+.nav{
+  background:#fff; color:#1E1E1E; position:fixed; bottom:0; left:0; right:0;
+  box-shadow:0 -1px 5px rgba(0,0,0,.1);
+  display:flex; justify-content:space-between; align-items:center;
+  z-index:1500;
+}
+.nav ul{ list-style:none; margin:0; padding:.5rem 0; display:flex; justify-content:space-evenly; width:100%; overflow:visible; }
+.nav a{ color:#1E1E1E; text-decoration:none; font-size:12px; white-space:nowrap; padding:.5rem 1rem; text-align:center; }
+.nav a:hover{ color:#A63328; }
+
+.dropdown{ position:relative; }
+.dropdown-content{
+  display:none; position:fixed; bottom:60px; left:50%; transform:translateX(-50%);
+  width:60%; min-width:180px; background:#fff; box-shadow:0 8px 16px rgba(0,0,0,.2); z-index:2000;
+}
+.dropdown-content a{ font-size:12px; padding:8px 12px; color:#000; text-decoration:none; display:block; }
+.dropdown-content a:hover{ background:#ddd; }
+/* klik-åbning (nav.js sætter .active) */
+.dropdown.active .dropdown-content{ display:block; }
+
+/* ===== Tablet & Desktop (samme som de andre) ===== */
+@media (min-width:768px){
+  header{ flex-direction:row; justify-content:space-between; align-items:center; padding:1rem 2rem; }
+
+  .nav{ position:static; box-shadow:none; width:auto; z-index:auto; }
+  .nav ul{ justify-content:flex-end; gap:10rem; overflow:visible; }
+  .nav a{ font-size:14px; }
+
+  h1{ font-size:2rem; text-align:left; }
+  .logo{ width:50%; max-width:100px; position:relative; bottom:0; top:55%; left:-10%; transform:translateX(-50%); }
+
+  /* Drop-DOWN under link */
+  .dropdown{ position:relative; display:inline-block; }
+  .dropdown-content{
+    display:none; position:absolute; top:100%; left:50%; transform:translateX(-50%);
+    bottom:auto; width:auto; min-width:160px; background:#ffffffb9; box-shadow:0 8px 16px rgba(0,0,0,.2); z-index:1500;
+  }
+  .dropdown:hover .dropdown-content{ display:block; }
+
+  /* lidt luft under header */
+  main{ margin-top:80px; }
+}
+
+/* Large Desktop */
+@media (min-width:1200px){
+  .logo{ max-width:150px; top:58%; left:-23%; }
+  .nav a{ font-size:16px; }
+  header h1{ font-size:3rem; }
+  .dropdown-content a{ font-size:14px; padding:8px 12px; }
+}
+
+/* ===== Side-specifikt indhold (About Me) ===== */
+
+/* Stil for h2 */
+h2 {
+  font-weight:500;
+  font-size:1.5rem;
+  margin:0;
+  padding:20px 0 0 0;
+}
+
+/* Main Section */
+main{
+  flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center;
+  padding:24px; padding-top:0; /* mobil: nav i bunden, så ingen margin-top her */
+}
+
+/* Content Section */
+.container{
+  display:flex; flex-direction:column; gap:20px;
+  width:100%; max-width:1200px;
+}
+
+/* Top Row */
+.top-row{
+  width:100%; display:flex; flex-direction:column; align-items:center; justify-content:center;
+}
+.top-row img{
+  width:100%; max-width:500px; height:auto; object-fit:cover;
+}
+.top-row p{
+  margin-top:10px; font-size:1rem; text-align:center;
+}
+
+/* Mid Row (2 kolonner på tablet+) */
+.mid-row{ display:flex; flex-direction:column; gap:20px; width:100%; }
+.left-column, .right-column{ flex:1; justify-content:center; }
+.right-column img{
+  width:100%; max-width:500px; height:auto; object-fit:cover;
+}
+.left-column{ padding:20px; }
+.left-column h2{ font-size:1.5rem; margin-bottom:10px; }
+.left-column p{ font-size:1rem; line-height:1.5; }
+
+/* Bottom Row */
+.bottom-row{
+  width:100%; padding:20px; display:flex; justify-content:center;
+}
+.bottom-row img{
+  width:100%; max-width:100%; height:auto; object-fit:cover;
+}
+
+/* Tablet+ layout-justeringer */
+@media (min-width:768px){
+  .top-row p{ margin-top:30px; font-size:1rem; text-align:center; }
+  .mid-row{ flex-direction:row; }
+  .right-column img{ max-width:800px; }
+  .bottom-row img{ max-width:700px; }
+}
+
+/* XL */
+@media (min-width:1200px){
+  /* plads til evt. yderligere tweaks */
+}

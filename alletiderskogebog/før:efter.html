@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Før / Efter – interaktiv slider</title>
+
+  <!-- Poppins (samme fontfamilie som i din airport-case) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== Design tokens (matcher din airport-vibe) ===== */
+    :root{
+      --ink:#111111;    /* overskrifter/primær tekst */
+      --text:#2a2a2e;   /* brødtekst */
+      --muted:#6f6f75;  /* sekundær/labels */
+      --bg:#ffffff;
+      --edge:#e9e9ec;   /* subtile streger */
+      --accent:#19a974; /* grøn accent (kogebog) */
+      --wrap: 1040px;
+    }
+
+    /* ===== Base ===== */
+    *{ box-sizing:border-box }
+    html,body{ margin:0 }
+    body{
+      background:var(--bg);
+      color:var(--text);
+      font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      padding-bottom:48px;
+    }
+    img{ display:block; max-width:100%; height:auto }
+    .wrap{ width:100%; max-width:var(--wrap); margin:0 auto; padding:0 18px }
+
+    h1,h2,h3{ margin:0 0 .5rem; letter-spacing:-0.01em; color:var(--ink) }
+    h2{ font-size:32px; font-weight:600; margin-top:22px }
+
+    .section{ padding:34px 0 28px; border-top:1px solid var(--edge) }
+    .section:first-of-type{ border-top:0 }
+
+    /* ===== Før/Efter slider ===== */
+    .ba-compare{
+      --pos:50%;
+      position:relative;
+      width:100%;
+      border:1px solid var(--edge);
+      border-radius:12px;
+      overflow:hidden;
+      background:#fff;
+      margin-top:14px;
+    }
+    .ba-img{
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      object-fit:cover;  /* brug 'contain' hvis dine billeder har meget luft */
+    }
+    .ba-after{ z-index:1 } /* Efter = fuldt billede i bunden */
+    .ba-before{
+      z-index:2;
+      clip-path: inset(0 calc(100% - var(--pos)) 0 0); /* klip ved --pos */
+    }
+    .ba-range{
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      opacity:0; cursor:ew-resize; z-index:5;
+    }
+    .ba-handle{
+      position:absolute; top:0; bottom:0; left:var(--pos);
+      width:0; transform:translateX(-50%);
+      z-index:4;
+    }
+    .ba-handle::before{
+      content:""; position:absolute; top:0; bottom:0; left:0;
+      width:1px; background:var(--edge);
+      box-shadow:0 0 0 1px rgba(0,0,0,.02);
+    }
+    .ba-handle span{
+      position:absolute; top:50%; left:0; transform:translate(-50%,-50%);
+      width:42px; height:42px; border-radius:999px;
+      background:#fff; border:1px solid var(--edge);
+      display:grid; place-items:center;
+      box-shadow:0 8px 30px rgba(0,0,0,.12);
+    }
+    .ba-handle span::before{
+      content:"↔"; font-size:18px; color:var(--ink); line-height:1;
+    }
+    .ba-badges .ba-tag{
+      position:absolute; top:10px; padding:6px 10px;
+      border:1px solid var(--edge); border-radius:999px;
+      background:#fff; color:var(--ink); font-weight:600; font-size:.92rem;
+      z-index:6;
+    }
+    .ba-badges .before{ left:10px }
+    .ba-badges .after{ right:10px }
+
+    /* Demo helper: hold en anstændig højde på slideren */
+    .ba-compare{ aspect-ratio: 16/9; } /* juster efter dine screenshots */
+    @media (max-width: 680px){
+      h2{ font-size:26px }
+      .ba-compare{ aspect-ratio: 4/3; }
+    }
+
+    /* Små helper-styles til demo-knapper (valgfri) */
+    .btn{
+      display:inline-block; padding:10px 14px; border-radius:12px;
+      border:1px solid var(--ink); color:var(--ink); text-decoration:none; font-weight:600;
+    }
+    .btn.primary{
+      background:var(--accent); border-color:var(--accent); color:#fff;
+    }
+    .muted{ color:var(--muted) }
+  </style>
+</head>
+<body>
+
+  <section class="section" id="intro">
+    <div class="wrap">
+      <h2>Før / Efter – interaktiv sammenligning</h2>
+      <p class="muted">Træk i håndtaget eller brug piletasterne for at sammenligne skærmbillederne.</p>
+
+      <!-- SLIDER #1 -->
+      <div class="ba-compare" data-label-before="Før" data-label-after="Efter">
+        <!-- BYT disse src med dine egne billeder -->
+        <img class="ba-img ba-before" src="for-opskrift.png"  alt="Før: original visning">
+        <img class="ba-img ba-after"  src="efter-opskrift.png" alt="Efter: redesign med børnevenlige trin, tidsestimat m.m.">
+
+        <div class="ba-handle" aria-hidden="true"><span></span></div>
+        <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Sammenlign før og efter">
+        <div class="ba-badges">
+          <span class="ba-tag before">Før</span>
+          <span class="ba-tag after">Efter</span>
+        </div>
+      </div>
+
+      <!-- Kopiér blokken herover for flere sliders (SLIDER #2, #3, ...) -->
+    </div>
+  </section>
+
+  <script>
+    // Before/After slider – understøtter flere instanser
+    document.querySelectorAll('.ba-compare').forEach(function(el){
+      const range  = el.querySelector('.ba-range');
+      const handle = el.querySelector('.ba-handle');
+      const tagBefore = el.querySelector('.ba-tag.before');
+      const tagAfter  = el.querySelector('.ba-tag.after');
+
+      // Hvis du vil sætte custom labels via data-attributter:
+      const lb = el.getAttribute('data-label-before');
+      const la = el.getAttribute('data-label-after');
+      if (lb && tagBefore) tagBefore.textContent = lb;
+      if (la && tagAfter)  tagAfter.textContent  = la;
+
+      function update(val){ el.style.setProperty('--pos', val + '%'); }
+      range.addEventListener('input', function(){ update(this.value) });
+      update(range.value);
+
+      // (Valgfrit) klik på fladen for at hoppe direkte til position
+      el.addEventListener('pointerdown', function(e){
+        const rect = el.getBoundingClientRect();
+        const pos = Math.min(100, Math.max(0, ((e.clientX - rect.left) / rect.width) * 100 ));
+        range.value = pos.toFixed(2);
+        update(range.value);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+/* ===== Social case overlay (påvirker ikke navbar) ===== */
+
+/* Diskret grøn tone i hero */
+.hero{
+    background:
+      radial-gradient(1100px 420px at 18% -12%, rgba(25,169,116,.07) 0%, rgba(25,169,116,0) 55%),
+      linear-gradient(#fff,#fff);
+    padding:22px 0 34px;
+  }
+  @media (min-width:768px){
+    .hero{ padding:28px 0 48px; }
+  }
+  
+  /* Gør hero-billedet større på desktop */
+  .kiosk img{
+    width:100%;
+    height:auto;
+    max-height:320px;          /* mobil/tablet default */
+    object-fit:contain;
+    display:block;
+  }
+  @media (min-width:768px){
+    .hero-grid{ grid-template-columns: 1fr 420px !important; }  /* større højre kolonne */
+    .kiosk img{ max-height:420px; }
+  }
+  @media (min-width:1200px){
+    .hero-grid{ grid-template-columns: 1fr 520px !important; }  /* endnu større på stor desktop */
+    .kiosk img{ max-height:520px; }
+  }
+  
+  /* Sliders – ens højde + centrerede billeder */
+  .slider .viewport{ overflow:hidden; }
+  .slider .track{ align-items:stretch; }
+  .slider .slide figure{
+    height: 420px;
+    display:flex; align-items:center; justify-content:center;
+    margin:0; padding:10px;
+    border:1px solid var(--edge);
+    border-radius:12px;
+    background:#f8f8fa;
+  }
+  .slider .slide img{
+    max-height:100%;
+    width:auto; height:auto;
+    object-fit:contain;
+    margin:0 auto;
+  }
+  @media (max-width:480px){
+    .slider .slide figure{ height:240px; padding:6px; border:0; background:#fff; }
+  }
+  .slider .dots button[aria-current="true"]{ background:var(--accent); }
+  
+  /* Personas – compact version (ingen rammer) */
+  .personas-two{ display:grid; gap:16px; }
+  @media (min-width:768px){ .personas-two{ grid-template-columns: 1fr 1fr; } }
+  
+  .personas-compact{ gap:24px; }
+  .persona-card{ border:none; background:transparent; padding:0; }
+  .persona-card.compact{ border:none; background:transparent; padding:0; }
+  
+  .persona-media img{
+    display:block; width:100%; height:auto; border-radius:10px; box-shadow:none;
+  }
+  
+  .persona-intro{ margin:8px 0 10px; }
+  .persona-columns.compact{ display:grid; gap:10px; }
+  @media (min-width:768px){
+    .persona-columns.compact{ grid-template-columns:1fr 1fr; gap:12px; }
+  }
+  
+  .persona-list{ margin:0 0 6px 18px; }
+  .persona-list li{ margin:4px 0; }
+  .persona-footnote{ margin-top:12px; color:var(--muted); font-size:.95rem; }
+  
+  /* Små hjælpe-badges hvis du bruger dem */
+  .label{
+    display:inline-block; padding:6px 10px; border:1px solid var(--edge);
+    background:#fff; border-radius:999px; font-size:.92rem; color:var(--ink);
+  }
+/* To kolonner til de to billeder – falder til én kolonne på mobil */
+.media-duo{
+    display:grid;
+    gap:14px;
+    grid-template-columns: 1fr;
+    align-items:start;
+  }
+  .media-duo figure{ margin:0; }
+  .media-duo img{
+    display:block;
+    width:100%;
+    height:auto;
+    object-fit:contain;
+    border-radius:12px;
+    background:#fff;
+    border:1px solid var(--edge);
+    padding:8px;                 /* lidt “mat” ramme som i de andre cases */
+  }
+  .media-duo figcaption{ margin-top:6px; font-size:.95rem; }
+  
+  @media (min-width:768px){
+    .media-duo{ grid-template-columns: 1fr 1fr; }
+  }
+    /* === Social case: fjern grøn accent + rammer og flader === */
+
+/* 1) Neutral hero (ingen grøn tone) */
+.hero{
+    background: #fff !important;  /* væk med radial-gradienten */
+  }
+  
+  /* 2) Slider-figurer: ingen kant, ingen grå baggrund */
+  .slider .slide figure{
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  
+  /* 3) Dots i slider: brug standard blækfarve i stedet for grøn */
+  .slider .dots button[aria-current="true"]{
+    background: var(--ink) !important;  /* sort/grå i stedet for accent */
+  }
+  
+  /* 4) Små “label”-badges: ingen kant */
+  .label{
+    border: 0 !important;
+    background: transparent !important;
+  }
+  
+  /* 5) Persona-kort: sørg for nul rammer (backup overstyring) */
+  .persona-card,
+  .persona-card.compact{
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  
+  /* 6) Hvis knapper tidligere arvede accent, gør dem neutrale */
+  .btn{
+    border-color: var(--ink) !important;
+    color: var(--ink) !important;
+  }
+  .btn:hover{ filter:none !important; }
+  
+  /* 7) Hvis du havde sat accent til grøn et sted i denne case, nulstil lokalt */
+  :root{
+    /* kun for denne side – hvis det påvirker andre sider, flyt til en wrapper-klasse */
+    --accent: var(--ink);
+  }
+  
